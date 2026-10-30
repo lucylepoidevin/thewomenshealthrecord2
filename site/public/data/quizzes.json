@@ -1,0 +1,169 @@
+[
+ {
+  "slug": "who-set-your-normal",
+  "title": "Who set your normal?",
+  "dek": "Ten questions on where the reference ranges on a blood test came from, who they were measured on, and what later measurements found.",
+  "questions": [
+   {
+    "id": "hb-1968",
+    "prompt": "The haemoglobin cut-offs for anaemia used worldwide, 12 g/dL for women and 13 g/dL for men, were first proposed in which year?",
+    "options": [
+     "1968",
+     "1985",
+     "2001",
+     "2024"
+    ],
+    "answer": 0,
+    "explain": "The World Health Organization proposed the cut-offs in 1968 from four published references and one set of unpublished observations, in populations of predominantly European ancestry. Its 2024 revision kept both values, and noted that the men's data would have supported 13.5 g/dL.",
+    "source": {
+     "title": "Guideline on haemoglobin cutoffs to define anaemia in individuals and populations",
+     "url": "https://www.who.int/publications/i/item/9789240088542"
+    }
+   },
+   {
+    "id": "ferritin-25",
+    "prompt": "The WHO threshold for iron deficiency in adults is a ferritin of 15 µg/L. In a 2021 analysis of 7,498 US women aged 15 to 49, haemoglobin began to fall once ferritin dropped below about:",
+    "options": [
+     "15 µg/L",
+     "25 µg/L",
+     "45 µg/L",
+     "70 µg/L"
+    ],
+    "answer": 1,
+    "explain": "Mei and colleagues found the physiological threshold at 25.2 µg/L by haemoglobin and 24.0 µg/L by transferrin receptor. Applying it would raise the measured prevalence of iron deficiency in premenopausal US women from about 17 percent to about 30 percent.",
+    "source": {
+     "title": "Physiologically based serum ferritin thresholds for iron deficiency in children and non-pregnant women: a US NHANES serial cross-sectional study",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/34329578/"
+    }
+   },
+   {
+    "id": "ferritin-ash",
+    "prompt": "In September 2026 the American Society of Hematology set its diagnostic ferritin threshold for iron deficiency in adults, including menstruating and pregnant women, at:",
+    "options": [
+     "15 ng/mL",
+     "20 ng/mL",
+     "30 ng/mL",
+     "50 ng/mL"
+    ],
+    "answer": 2,
+    "explain": "The 2026 guideline uses 30 ng/mL or less irrespective of anaemia, and 50 ng/mL in higher-risk groups. Most laboratories still print a lower limit of 15 for adult women; Labcorp prints 15 to 150 but states it has adopted 30 as its deficiency threshold.",
+    "source": {
+     "title": "American Society of Hematology 2026 guidelines for diagnosis of iron deficiency",
+     "url": "https://ashpublications.org/bloodadvances/article/doi/10.1182/bloodadvances.2025015950/570502/"
+    }
+   },
+   {
+    "id": "troponin-2015",
+    "prompt": "In a 2015 Edinburgh study of 1,126 patients with suspected heart attack, a single troponin threshold diagnosed a heart attack in 11 percent of women and 19 percent of men. With a high-sensitivity assay and sex-specific thresholds, the figure for women became:",
+    "options": [
+     "11 percent",
+     "15 percent",
+     "22 percent",
+     "30 percent"
+    ],
+    "answer": 2,
+    "explain": "Women rose from 11 to 22 percent and men from 19 to 21 percent. The 56 women reclassified had a 25 percent rate of death or reinfarction at 12 months, and 2 percent of them had been sent for angiography, against 47 percent of patients diagnosed under the old threshold.",
+    "source": {
+     "title": "High sensitivity cardiac troponin and the under-diagnosis of myocardial infarction in women: prospective cohort study",
+     "url": "https://doi.org/10.1136/bmj.g7873"
+    }
+   },
+   {
+    "id": "troponin-83",
+    "prompt": "In the High-STEACS trial of 48,282 patients, 1,771 were reclassified as having myocardial injury when sex-specific troponin thresholds replaced a single one. What share of those reclassified were women?",
+    "options": [
+     "25 percent",
+     "50 percent",
+     "67 percent",
+     "83 percent"
+    ],
+    "answer": 3,
+    "explain": "1,470 of the 1,771 reclassified patients were women. The Fourth Universal Definition of Myocardial Infarction recommends sex-specific 99th percentiles for all high-sensitivity assays; surveys since have found most hospitals using the Roche troponin T assay still apply the combined value.",
+    "source": {
+     "title": "High-sensitivity troponin in the evaluation of patients with suspected acute coronary syndrome: a stepped-wedge, cluster-randomised controlled trial (High-STEACS)",
+     "url": "https://doi.org/10.1016/S0140-6736(18)31923-8"
+    }
+   },
+   {
+    "id": "alt-acg",
+    "prompt": "The American College of Gastroenterology's 2017 guideline states that a normal ALT, the common liver enzyme, in women is below:",
+    "options": [
+     "19 to 25 U/L",
+     "30 to 35 U/L",
+     "40 to 45 U/L",
+     "50 to 55 U/L"
+    ],
+    "answer": 0,
+    "explain": "The guideline gives 19 to 25 U/L for women and 29 to 33 U/L for men, from Prati's 2002 study of 6,835 screened blood donors. Laboratories print upper limits of 33 to 50 U/L for women, so a result of 30 reads as normal on every report and sits above the guideline's range.",
+    "source": {
+     "title": "ACG Clinical Guideline: Evaluation of Abnormal Liver Chemistries",
+     "url": "https://doi.org/10.1038/ajg.2016.517"
+    }
+   },
+   {
+    "id": "hdl-rejected",
+    "prompt": "In 2001 the US National Cholesterol Education Program considered a separate \"low HDL\" cut-off for women, below 50 mg/dL instead of the men's 40. What did the panel decide?",
+    "options": [
+     "Adopted it as a formal risk factor",
+     "Rejected it, because it would make many low-risk women eligible for cholesterol drugs",
+     "Left the choice to each laboratory",
+     "Set 35 mg/dL for both sexes"
+    ],
+    "answer": 1,
+    "explain": "The panel's full report records that a sex-specific cut-point \"was rejected because it would make many women who are otherwise at low risk eligible for LDL-lowering drugs\", and kept 50 mg/dL only as a \"marginal risk factor\" inside the metabolic syndrome definition. Most laboratories print one value for everyone.",
+    "source": {
+     "title": "ATP III Full Report",
+     "url": "https://www.nhlbi.nih.gov/files/docs/resources/heart/atp-3-cholesterol-full-report.pdf"
+    }
+   },
+   {
+    "id": "tsh-85",
+    "prompt": "The usual TSH range, about 0.45 to 4.5 mIU/L, comes from a US survey of the 1990s. What share of the healthy reference population had a TSH below 2.5?",
+    "options": [
+     "50 percent",
+     "65 percent",
+     "85 percent",
+     "95 percent"
+    ],
+    "answer": 2,
+    "explain": "About 85 percent of the reference population sat below 2.5 mIU/L; the distribution is skewed, which is why proposals to lower the upper limit to 2.5 or 3.0 have circulated since 2003. The range was never derived separately for women, although TSH was higher and thyroid antibodies more common in women in the same survey.",
+    "source": {
+     "title": "Clinical practice guidelines for hypothyroidism in adults: cosponsored by AACE and ATA",
+     "url": "https://doi.org/10.4158/EP12280.GL"
+    }
+   },
+   {
+    "id": "ntprobnp-women",
+    "prompt": "NT-proBNP above 125 pg/mL is the European threshold for suspecting heart failure. In a Scottish study of 18,356 adults, what share of healthy women under 30 were above it, against 1.4 percent of men?",
+    "options": [
+     "1 percent",
+     "3 percent",
+     "9.8 percent",
+     "25 percent"
+    ],
+    "answer": 2,
+    "explain": "Women had higher NT-proBNP at every age, with 9.8 percent of healthy women under 30 above the rule-out threshold. The authors called for age- and sex-specific thresholds; the European guideline applies a single value.",
+    "source": {
+     "title": "Reference ranges for NT-proBNP and risk factors for higher NT-proBNP concentrations in a large general population cohort",
+     "url": "https://doi.org/10.1161/CIRCHEARTFAILURE.121.009427"
+    }
+   },
+   {
+    "id": "amh-steiner",
+    "prompt": "Anti-Müllerian hormone is widely sold as a fertility test. In a 2017 study of 750 women aged 30 to 44 trying to conceive, women with low AMH (below 0.7 ng/mL) had conceived after 12 cycles at a rate of:",
+    "options": [
+     "40 percent",
+     "55 percent",
+     "75 percent",
+     "84 percent"
+    ],
+    "answer": 3,
+    "explain": "84 percent, against 75 percent in women with normal AMH; the difference was not statistically significant. The American College of Obstetricians and Gynecologists states that a single AMH value should not be used to counsel women about their time to pregnancy outside infertility care.",
+    "source": {
+     "title": "Association Between Biomarkers of Ovarian Reserve and Infertility Among Older Women of Reproductive Age",
+     "url": "https://doi.org/10.1001/jama.2017.14588"
+    }
+   }
+  ]
+ }
+]

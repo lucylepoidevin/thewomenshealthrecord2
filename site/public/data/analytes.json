@@ -1,0 +1,3295 @@
+{
+ "generated": "2026-10-29",
+ "analytes": [
+  {
+   "id": "ferritin",
+   "name": "Ferritin",
+   "units": [
+    {
+     "unit": "ng/mL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "µg/L",
+     "toCanonical": 1
+    }
+   ],
+   "canonicalUnit": "ng/mL",
+   "labRange": {
+    "female": [
+     6,
+     175
+    ],
+    "male": [
+     31,
+     409
+    ],
+    "any": null,
+    "source": "Mayo Clinic Laboratories, test FERR1 (female 18-50 y; >=51 y is 11-328)",
+    "url": "https://www.mayocliniclabs.com/test-catalog/overview/619953"
+   },
+   "origin": "Mayo's female interval of 6-175 µg/L is a statistical range for apparently healthy adults; the catalogue cites only textbook chapters (Henry's 2007, Tietz 2012/2018) and no reference-interval study [S1]. Mayo's own text notes there is no sex difference in ferritin before puberty and that female values rise with age [S1]. Labcorp prints 15-150 ng/mL for adult women but states it 'has adopted a threshold of 30 ng/mL in adult and adolescent patients, to identify patients with iron deficiency' [S2].",
+   "sexSpecific": {
+    "exists": true,
+    "female": 150,
+    "male": 200,
+    "what": "WHO 2020 risk-of-iron-overload threshold in apparently healthy people (>150 µg/L menstruating women, >200 µg/L men and non-menstruating women). The WHO iron-deficiency threshold (<15 µg/L from age 5) is the same for both sexes.",
+    "source": "[S4]"
+   },
+   "contested": {
+    "band": [
+     15,
+     30
+    ],
+    "summary": "WHO's <15 µg/L cutoff is expert opinion graded low certainty; its own evidence review found mean ferritin 15.1 µg/L (9 studies, 390 people) when bone-marrow iron was absent [S4]. Mei et al. 2021 (NHANES, 7,498 non-pregnant women 15-49) found haemoglobin starts to fall at ferritin 25.2 µg/L (95% CI 24.2-26.2) and sTfR rises at 24.0 µg/L (23.3-24.6), which would raise US prevalence in premenopausal women from about 17% to about 30% [S5, S6]. BSG 2021 says values under 30 µg/L 'are generally indicative of low body iron stores' and a 45 µg/L cutoff has specificity 0.92 [S7]; ASH 2026 moved its diagnostic threshold to 30 ng/mL irrespective of anaemia, with 50 ng/mL in higher-risk groups [S11, S12].",
+    "sources": [
+     "S4",
+     "S5",
+     "S6",
+     "S7",
+     "S11",
+     "S12"
+    ]
+   },
+   "guidanceInBand": "BSG 2021: 'SF levels of less than 30 µg/L are generally indicative of low body iron stores'; 'The cancer risk in iron deficiency without anaemia is low'; and 'There is insufficient evidence to support invasive investigation in non-anaemic iron deficiency' [S7]. WHO 2020: with infection or inflammation 'a ferritin concentration below 30 μg/L in children and 70 μg/L in adults may be used to indicate iron deficiency' [S4].",
+   "confidence": "high",
+   "sources": [
+    {
+     "id": "S1",
+     "title": "Test FERR1: Ferritin, Serum",
+     "publisher": "Mayo Clinic Laboratories",
+     "year": 2026,
+     "url": "https://www.mayocliniclabs.com/test-catalog/overview/619953"
+    },
+    {
+     "id": "S2",
+     "title": "Test 004598: Ferritin",
+     "publisher": "Labcorp",
+     "year": 2026,
+     "url": "https://www.labcorp.com/tests/004598/ferritin"
+    },
+    {
+     "id": "S3",
+     "title": "Test 0070065: Ferritin",
+     "publisher": "ARUP Laboratories",
+     "year": 2022,
+     "url": "https://ltd.aruplab.com/Tests/Pub/0070065"
+    },
+    {
+     "id": "S4",
+     "title": "WHO guideline on use of ferritin concentrations to assess iron status in individuals and populations",
+     "publisher": "World Health Organization",
+     "year": 2020,
+     "url": "https://www.ncbi.nlm.nih.gov/books/NBK569876/"
+    },
+    {
+     "id": "S5",
+     "title": "Physiologically based serum ferritin thresholds for iron deficiency in children and non-pregnant women: a US NHANES serial cross-sectional study",
+     "publisher": "Mei Z et al., Lancet Haematology 8(8):e572-e582, doi:10.1016/S2352-3026(21)00168-X",
+     "year": 2021,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/34329578/"
+    },
+    {
+     "id": "S6",
+     "title": "Are we underestimating the prevalence of iron deficiency?",
+     "publisher": "Columbia University Irving Medical Center (press release)",
+     "year": 2021,
+     "url": "https://www.cuimc.columbia.edu/news/are-we-underestimating-prevalence-iron-deficiency"
+    },
+    {
+     "id": "S7",
+     "title": "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults",
+     "publisher": "Snook J et al., Gut 70:2030-2051, doi:10.1136/gutjnl-2021-325210",
+     "year": 2021,
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8515119/"
+    },
+    {
+     "id": "S8",
+     "title": "Recommendations to Prevent and Control Iron Deficiency in the United States",
+     "publisher": "CDC, MMWR",
+     "year": 1998,
+     "url": "https://www.cdc.gov/mmwr/preview/mmwrhtml/00051880.htm"
+    },
+    {
+     "id": "S9",
+     "title": "Why should women have lower reference limits for haemoglobin and ferritin concentrations than men?",
+     "publisher": "Rushton DH et al., BMJ 322:1355-1357, doi:10.1136/bmj.322.7298.1355",
+     "year": 2001,
+     "url": "https://www.bmj.com/content/322/7298/1355"
+    },
+    {
+     "id": "S10",
+     "title": "EASL Clinical Practice Guidelines on haemochromatosis",
+     "publisher": "European Association for the Study of the Liver, J Hepatol, doi:10.1016/j.jhep.2022.03.033",
+     "year": 2022,
+     "url": "https://easl.eu/wp-content/uploads/2022/06/PIIS01688278220021121.pdf"
+    },
+    {
+     "id": "S11",
+     "title": "American Society of Hematology 2026 guidelines for diagnosis of iron deficiency",
+     "publisher": "Powers JM et al., Blood Advances, doi:10.1182/bloodadvances.2025015950",
+     "year": 2026,
+     "url": "https://ashpublications.org/bloodadvances/article/doi/10.1182/bloodadvances.2025015950/570502/"
+    },
+    {
+     "id": "S12",
+     "title": "ASH raises ferritin thresholds for diagnosing iron deficiency (secondary report of S11)",
+     "publisher": "Patient Care Online",
+     "year": 2026,
+     "url": "https://www.patientcareonline.com/view/ash-raises-ferritin-thresholds-for-diagnosing-iron-deficiency"
+    }
+   ],
+   "short": "Ferritin",
+   "group": "Iron and blood count",
+   "aliases": [
+    "ferritin",
+    "serum ferritin",
+    "ferr"
+   ],
+   "scale": [
+    0,
+    250
+   ]
+  },
+  {
+   "id": "haemoglobin",
+   "name": "Haemoglobin",
+   "units": [
+    {
+     "unit": "g/dL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "g/L",
+     "toCanonical": 0.1
+    },
+    {
+     "unit": "mmol/L",
+     "toCanonical": 1.6114
+    }
+   ],
+   "canonicalUnit": "g/dL",
+   "labRange": {
+    "female": [
+     11.6,
+     15.0
+    ],
+    "male": [
+     13.2,
+     16.6
+    ],
+    "any": null,
+    "source": "Mayo Clinic Laboratories, test CBC (>=18 y)",
+    "url": "https://www.mayocliniclabs.com/test-catalog/overview/9109"
+   },
+   "origin": "Mayo's CBC intervals cite Adeli et al. 2015, a CALIPER / Canadian Health Measures Survey study of 11,999 people aged 3-79 measured on Beckman Coulter HmX and Sysmex analysers, which found that 'females had lower hemoglobin and hematocrit starting at puberty' [H1, H3]. The WHO anaemia cutoffs (120 g/L women, 130 g/L men) were first proposed in 1968 from 'four published references and one set of unpublished observations' in European and North American populations, and WHO's 2024 revision kept them, resting the adult values on fifth centiles of apparently healthy, iron-replete populations [H4].",
+   "sexSpecific": {
+    "exists": true,
+    "female": 12.0,
+    "male": 13.0,
+    "what": "WHO 2024 haemoglobin cutoff to define anaemia in non-pregnant women and men aged 15-65 (120 and 130 g/L); CDC 1998 uses 12.0 and 13.5 g/dL.",
+    "source": "[H4]"
+   },
+   "contested": {
+    "band": [
+     11.6,
+     12.0
+    ],
+    "summary": "Beutler and Waalen 2006 excluded iron deficiency (transferrin saturation <16% or ferritin <10 µg/L) in 2,966 white women aged 20-49 and 6,709 white men 20-59 (Scripps-Kaiser) and still found a sex gap: fifth centiles 12.2 versus 13.7 g/dL [H5]. Braat et al. 2024, the WHO-commissioned pooled analysis, gave fifth centiles of 119.7 g/L (90% CI 119.1-120.3, n=3,640) in iron-replete non-pregnant women and 134.9 g/L (134.2-135.6, n=2,377) in men; WHO kept women at 120 but held men at 130 despite data 'suggest[ing] a higher haemoglobin cutoff (i.e. 135 g/L)' [H4, H6]. Rushton et al. 2001 argued the female limit was set on iron-deficient populations; Morison and Ferguson's iron-replete data (ferritin 80-100 µg/L; 612 men, 1,327 women) showed 10th centiles of 139 versus 123 g/L and that a male range would misclassify 25-50% of women as anaemic [H10, H10a].",
+    "sources": [
+     "H4",
+     "H5",
+     "H6",
+     "H10"
+    ]
+   },
+   "guidanceInBand": "WHO 2024 classifies 110-119 g/L in a non-pregnant woman as 'Mild anaemia' and notes that management 'could vary depending on the clinical scenario and the underlying cause(s)' [H4]. BSG 2021: 'iron deficiency should be confirmed by iron studies prior to investigation. Serum ferritin is the single most useful marker of IDA' [H9].",
+   "confidence": "high",
+   "sources": [
+    {
+     "id": "H1",
+     "title": "Test CBC: Complete Blood Cell Count (CBC) with Differential, Blood",
+     "publisher": "Mayo Clinic Laboratories",
+     "year": 2026,
+     "url": "https://www.mayocliniclabs.com/test-catalog/overview/9109"
+    },
+    {
+     "id": "H3",
+     "title": "Complex biological profile of hematologic markers across pediatric, adult, and geriatric ages: establishment of robust pediatric and adult reference intervals on the basis of the Canadian Health Measures Survey",
+     "publisher": "Adeli K et al., Clin Chem 61(8):1075-1086, doi:10.1373/clinchem.2015.240531",
+     "year": 2015,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26044509/"
+    },
+    {
+     "id": "H4",
+     "title": "Guideline on haemoglobin cutoffs to define anaemia in individuals and populations",
+     "publisher": "World Health Organization, ISBN 978-92-4-008854-2",
+     "year": 2024,
+     "url": "https://www.who.int/publications/i/item/9789240088542"
+    },
+    {
+     "id": "H5",
+     "title": "The definition of anemia: what is the lower limit of normal of the blood hemoglobin concentration?",
+     "publisher": "Beutler E, Waalen J, Blood 107(5):1747-1750, doi:10.1182/blood-2005-07-3046",
+     "year": 2006,
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1895695"
+    },
+    {
+     "id": "H6",
+     "title": "Haemoglobin thresholds to define anaemia from age 6 months to 65 years: estimates from international data sources",
+     "publisher": "Braat S et al., Lancet Haematology 11(4):e253-e264, doi:10.1016/S2352-3026(24)00030-9",
+     "year": 2024,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38432242/"
+    },
+    {
+     "id": "H8",
+     "title": "Recommendations to Prevent and Control Iron Deficiency in the United States",
+     "publisher": "CDC, MMWR",
+     "year": 1998,
+     "url": "https://www.cdc.gov/mmwr/preview/mmwrhtml/00051880.htm"
+    },
+    {
+     "id": "H9",
+     "title": "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults",
+     "publisher": "Snook J et al., Gut 70:2030-2051, doi:10.1136/gutjnl-2021-325210",
+     "year": 2021,
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8515119/"
+    },
+    {
+     "id": "H10",
+     "title": "Why should women have lower reference limits for haemoglobin and ferritin concentrations than men? (with responses, BMJ 2001;323:806)",
+     "publisher": "Rushton DH et al., BMJ 322:1355-1357, doi:10.1136/bmj.322.7298.1355",
+     "year": 2001,
+     "url": "https://www.bmj.com/content/322/7298/1355"
+    },
+    {
+     "id": "H10a",
+     "title": "Responses to \"Why should women have lower reference limits for haemoglobin and ferritin concentrations than men?\" (Heath, Fairweather-Tait and Worwood; Morison and Ferguson)",
+     "publisher": "BMJ 323:806",
+     "year": 2001,
+     "url": "https://www.bmj.com/content/323/7316/806"
+    }
+   ],
+   "short": "Haemoglobin",
+   "group": "Iron and blood count",
+   "aliases": [
+    "haemoglobin",
+    "hemoglobin",
+    "hb",
+    "hgb"
+   ],
+   "scale": [
+    8,
+    18
+   ]
+  },
+  {
+   "id": "haematocrit",
+   "name": "Haematocrit",
+   "units": [
+    {
+     "unit": "%",
+     "toCanonical": 1
+    },
+    {
+     "unit": "L/L",
+     "toCanonical": 100
+    }
+   ],
+   "canonicalUnit": "%",
+   "labRange": {
+    "female": [
+     35.5,
+     44.9
+    ],
+    "male": [
+     38.3,
+     48.6
+    ],
+    "any": null,
+    "source": "Mayo Clinic Laboratories, test CBC (>=18 y)",
+    "url": "https://www.mayocliniclabs.com/test-catalog/overview/9109"
+   },
+   "origin": "Same provenance as haemoglobin: Mayo cites Adeli et al. 2015 (Canadian Health Measures Survey, 11,999 people aged 3-79) and the CLSI EP28-A3c reference-interval standard; that study reports lower haematocrit in females from puberty [H1, H3]. The interval is a population centile, not an outcome-based threshold.",
+   "sexSpecific": {
+    "exists": true,
+    "female": 35.7,
+    "male": 39.9,
+    "what": "CDC 1998 haematocrit cutoff for anaemia in non-pregnant women and men aged 18 and over (5th percentile of NHANES III after excluding likely iron deficiency). WHO's 2024 guideline gives haemoglobin cutoffs only.",
+    "source": "[H8]"
+   },
+   "contested": {
+    "band": [
+     35.5,
+     35.7
+    ],
+    "summary": "No haematocrit-specific threshold study was found; the dispute is inherited from haemoglobin, where iron-replete fifth centiles still show a sex gap (Beutler and Waalen 2006; Braat 2024) [H5, H6]. The practical overlap is narrow: Mayo's female lower limit (35.5%) sits just below the CDC anaemia cutoff (35.7%), so a value of 35.6% is 'normal' at Mayo and anaemic by CDC [H1, H8].",
+    "sources": [
+     "H1",
+     "H5",
+     "H6",
+     "H8"
+    ]
+   },
+   "guidanceInBand": "CDC 1998 treats haematocrit below 35.7% in a non-pregnant woman as anaemia and states that ferritin of 15 µg/L or less then 'confirms iron deficiency in anemic women' [H8]. Mayo: 'Results should be interpreted in conjunction with the patient's clinical picture and appropriate additional testing performed' [H1].",
+   "confidence": "medium",
+   "sources": [
+    {
+     "id": "H1",
+     "title": "Test CBC: Complete Blood Cell Count (CBC) with Differential, Blood",
+     "publisher": "Mayo Clinic Laboratories",
+     "year": 2026,
+     "url": "https://www.mayocliniclabs.com/test-catalog/overview/9109"
+    },
+    {
+     "id": "H3",
+     "title": "Complex biological profile of hematologic markers across pediatric, adult, and geriatric ages (Canadian Health Measures Survey)",
+     "publisher": "Adeli K et al., Clin Chem 61(8):1075-1086, doi:10.1373/clinchem.2015.240531",
+     "year": 2015,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26044509/"
+    },
+    {
+     "id": "H5",
+     "title": "The definition of anemia: what is the lower limit of normal of the blood hemoglobin concentration?",
+     "publisher": "Beutler E, Waalen J, Blood 107(5):1747-1750, doi:10.1182/blood-2005-07-3046",
+     "year": 2006,
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1895695"
+    },
+    {
+     "id": "H6",
+     "title": "Haemoglobin thresholds to define anaemia from age 6 months to 65 years",
+     "publisher": "Braat S et al., Lancet Haematology 11(4):e253-e264, doi:10.1016/S2352-3026(24)00030-9",
+     "year": 2024,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38432242/"
+    },
+    {
+     "id": "H8",
+     "title": "Recommendations to Prevent and Control Iron Deficiency in the United States",
+     "publisher": "CDC, MMWR",
+     "year": 1998,
+     "url": "https://www.cdc.gov/mmwr/preview/mmwrhtml/00051880.htm"
+    }
+   ],
+   "short": "Haematocrit",
+   "group": "Iron and blood count",
+   "aliases": [
+    "haematocrit",
+    "hematocrit",
+    "hct",
+    "pcv",
+    "packed cell volume"
+   ],
+   "scale": [
+    25,
+    55
+   ]
+  },
+  {
+   "id": "transferrin_saturation",
+   "name": "Transferrin saturation",
+   "units": [
+    {
+     "unit": "%",
+     "toCanonical": 1
+    }
+   ],
+   "canonicalUnit": "%",
+   "labRange": {
+    "female": null,
+    "male": null,
+    "any": [
+     14,
+     50
+    ],
+    "source": "Mayo Clinic Laboratories, test SFEC (percent saturation; serum iron is sex-specific: male 50-150, female 35-145 mcg/dL)",
+    "url": "https://www.mayocliniclabs.com/test-catalog/overview/621385"
+   },
+   "origin": "Mayo's 14-50% interval is supported only by textbook and guideline citations (Tietz 7th ed. 2023; ACG 2019 haemochromatosis guideline; Lopez et al. Lancet 2016), with no reference-interval study given; Mayo notes day-to-day intra-individual variation of 'approximately 25% to 30%' and says the test 'should not be used as the primary test for iron deficiency' [T1]. The deficiency cutoffs in use (16% and 20%) are conventions rather than sex-partitioned centiles [T1, T4, T5].",
+   "sexSpecific": {
+    "exists": true,
+    "female": 45,
+    "male": 50,
+    "what": "EASL 2022 transferrin saturation above which iron overload is suspected and HFE genotyping recommended (with ferritin >200 µg/L in women, >300 µg/L in men); the iron-deficiency cutoffs (<16% CDC; <20% BSG/with inflammation) are the same for both sexes.",
+    "source": "[T3]"
+   },
+   "contested": {
+    "band": [
+     14,
+     20
+    ],
+    "summary": "The Mayo reference interval starts at 14%, below both the CDC iron-deficiency cutoff (<16%) and the BSG/Mayo-in-inflammation cutoff (<20%), so a woman at 15-19% is inside the lab's 'normal' while meeting a deficiency definition [T1, T4, T5]. EASL explicitly states 'There is no universally accepted threshold for ferritin or transferrin saturation indicating iron overload' and adopts the sex-specific 45%/50% values from a single population screening study [T3].",
+    "sources": [
+     "T1",
+     "T3",
+     "T4",
+     "T5"
+    ]
+   },
+   "guidanceInBand": "Mayo: 'Percent saturation less than 16% is generally used to screen for iron deficiency, but a threshold of 20% is used in the presence of inflammation' [T1]. BSG 2021: 'A transferrin saturation of <20% is indicative of iron restriction' and 'Transferrin saturation can help if a false-normal ferritin is suspected' [T5].",
+   "confidence": "medium",
+   "sources": [
+    {
+     "id": "T1",
+     "title": "Test SFEC: Iron and Total Iron-Binding Capacity, Serum",
+     "publisher": "Mayo Clinic Laboratories",
+     "year": 2026,
+     "url": "https://www.mayocliniclabs.com/test-catalog/overview/621385"
+    },
+    {
+     "id": "T3",
+     "title": "EASL Clinical Practice Guidelines on haemochromatosis",
+     "publisher": "European Association for the Study of the Liver, J Hepatol, doi:10.1016/j.jhep.2022.03.033",
+     "year": 2022,
+     "url": "https://easl.eu/wp-content/uploads/2022/06/PIIS01688278220021121.pdf"
+    },
+    {
+     "id": "T4",
+     "title": "Recommendations to Prevent and Control Iron Deficiency in the United States",
+     "publisher": "CDC, MMWR",
+     "year": 1998,
+     "url": "https://www.cdc.gov/mmwr/preview/mmwrhtml/00051880.htm"
+    },
+    {
+     "id": "T5",
+     "title": "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults",
+     "publisher": "Snook J et al., Gut 70:2030-2051, doi:10.1136/gutjnl-2021-325210",
+     "year": 2021,
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8515119/"
+    }
+   ],
+   "short": "Transferrin saturation",
+   "group": "Iron and blood count",
+   "aliases": [
+    "transferrin saturation",
+    "tsat",
+    "iron saturation",
+    "transferrin sat",
+    "iron sat"
+   ],
+   "scale": [
+    0,
+    60
+   ]
+  },
+  {
+   "id": "mcv",
+   "name": "Mean corpuscular volume (MCV)",
+   "units": [
+    {
+     "unit": "fL",
+     "toCanonical": 1
+    }
+   ],
+   "canonicalUnit": "fL",
+   "labRange": {
+    "female": null,
+    "male": null,
+    "any": [
+     78.2,
+     97.9
+    ],
+    "source": "Mayo Clinic Laboratories, test CBC (>=18 y; identical for men and women)",
+    "url": "https://www.mayocliniclabs.com/test-catalog/overview/9109"
+   },
+   "origin": "Mayo cites Adeli et al. 2015 (Canadian Health Measures Survey, 11,999 people aged 3-79, Beckman Coulter HmX / Sysmex analysers) and CLSI EP28-A3c; unlike haemoglobin and haematocrit, the adult MCV interval is not partitioned by sex [M1, M3]. Mayo's working definition of microcytosis is MCV <80 fL [M1].",
+   "sexSpecific": {
+    "exists": false,
+    "female": null,
+    "male": null,
+    "what": "No sex-specific MCV threshold was found in WHO, CDC or BSG documents; CDC defines low MCV as below the age-specific 5th percentile of NHANES III without printing sex-specific values [M4].",
+    "source": "[M4]"
+   },
+   "contested": {
+    "band": null,
+    "summary": "No published argument that the female MCV reference interval is set on the wrong population was identified. The only grey zone is definitional: Mayo's lower reference limit (78.2 fL) differs from its microcytosis cutoff (80 fL) [M1].",
+    "sources": [
+     "M1"
+    ]
+   },
+   "guidanceInBand": "Mayo: 'Anemias are characterized as microcytic (MCV <80), macrocytic (MCV >100), or normocytic' and 'iron deficiency anemia is characterized by a high RDW, while thalassemia is characterized by a low RDW' [M1]. BSG 2021: 'Age, sex, Hb concentration and mean cell volume are all independent predictors of risk of GI cancer in IDA' [M5].",
+   "confidence": "medium",
+   "sources": [
+    {
+     "id": "M1",
+     "title": "Test CBC: Complete Blood Cell Count (CBC) with Differential, Blood",
+     "publisher": "Mayo Clinic Laboratories",
+     "year": 2026,
+     "url": "https://www.mayocliniclabs.com/test-catalog/overview/9109"
+    },
+    {
+     "id": "M3",
+     "title": "Complex biological profile of hematologic markers across pediatric, adult, and geriatric ages (Canadian Health Measures Survey)",
+     "publisher": "Adeli K et al., Clin Chem 61(8):1075-1086, doi:10.1373/clinchem.2015.240531",
+     "year": 2015,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26044509/"
+    },
+    {
+     "id": "M4",
+     "title": "Recommendations to Prevent and Control Iron Deficiency in the United States",
+     "publisher": "CDC, MMWR",
+     "year": 1998,
+     "url": "https://www.cdc.gov/mmwr/preview/mmwrhtml/00051880.htm"
+    },
+    {
+     "id": "M5",
+     "title": "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults",
+     "publisher": "Snook J et al., Gut 70:2030-2051, doi:10.1136/gutjnl-2021-325210",
+     "year": 2021,
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8515119/"
+    }
+   ],
+   "short": "MCV",
+   "group": "Iron and blood count",
+   "aliases": [
+    "mcv",
+    "mean corpuscular volume",
+    "mean cell volume"
+   ],
+   "scale": [
+    60,
+    110
+   ]
+  },
+  {
+   "id": "troponin_i_hs_abbott",
+   "name": "High-sensitivity troponin I (Abbott ARCHITECT/Alinity)",
+   "units": [
+    {
+     "unit": "ng/L",
+     "toCanonical": 1
+    },
+    {
+     "unit": "pg/mL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "ng/mL",
+     "toCanonical": 1000
+    }
+   ],
+   "canonicalUnit": "ng/L",
+   "labRange": {
+    "female": [
+     0,
+     15.6
+    ],
+    "male": [
+     0,
+     34.2
+    ],
+    "any": [
+     0,
+     26.2
+    ],
+    "source": "Abbott ARCHITECT STAT High Sensitive Troponin-I package insert (OUS, April 2015) as tabulated by IFCC C-CB v05/2023; US insert Sept 2019 gives 17 / 35 / 28",
+    "url": "https://pub-180a8d00f517477ba49634e6b2b147e3.r2.dev/2023/09/High-Sensitivity-Cardiac-Troponin-I-and-T-Assay-Analytical-Characteristics-Designated-By-Manufacturer-v052023.pdf"
+   },
+   "origin": "The 99th percentiles are manufacturer values from 1,531 apparently healthy people aged 21–75 (764 women, 766 men) using a robust statistic; 78% of the women had measurable troponin [S5]. An independent re-derivation in the AACC Universal Sample Bank (340 healthy women after exclusions) gave a lower female 99th percentile of 13 ng/L and only 42% of women measurable, and showed that stricter health exclusions push the limit down [S6].",
+   "sexSpecific": {
+    "exists": true,
+    "female": 16,
+    "male": 34,
+    "what": "99th-percentile upper reference limit defining myocardial injury; the thresholds used in the High-STEACS trial",
+    "source": "[S4][S2]"
+   },
+   "contested": {
+    "band": [
+     16,
+     34
+    ],
+    "summary": "With a single contemporary threshold, type 1 MI was diagnosed in 11% of women vs 19% of men; with the hs assay and sex-specific thresholds women rose to 22% (men 21%), and the 56 reclassified women had 25% death or reinfarction at 12 months yet 2% had angiography [S1]. In the 48,282-patient High-STEACS trial, 1,470 of 1,771 reclassified patients (83%) were women; myocardial injury in women rose 42% (3,521 to 4,991), but 1-year MI or cardiovascular death in reclassified patients did not fall (15% vs 12%, aOR 1.10, 95% CI 0.75–1.61) [S2][S3]. In England in 2019 only 54 of 97 trusts reporting a threshold used sex-specific cut-offs [S7].",
+    "sources": [
+     "S1",
+     "S2",
+     "S3",
+     "S7"
+    ]
+   },
+   "guidanceInBand": "\"Detection of an elevated cTn value above the 99th percentile URL is defined as myocardial injury\" and \"sex-specific 99th percentile URLs are recommended for hs-cTn assays\"; acute MI additionally requires \"a rising and/or falling pattern of cTn values with at least one value above the 99th percentile URL\" with evidence of ischaemia [S4].",
+   "confidence": "high",
+   "sources": [
+    {
+     "id": "S1",
+     "title": "High sensitivity cardiac troponin and the under-diagnosis of myocardial infarction in women: prospective cohort study",
+     "publisher": "BMJ",
+     "year": 2015,
+     "url": "https://doi.org/10.1136/bmj.g7873"
+    },
+    {
+     "id": "S2",
+     "title": "High-sensitivity troponin in the evaluation of patients with suspected acute coronary syndrome: a stepped-wedge, cluster-randomised controlled trial (High-STEACS)",
+     "publisher": "The Lancet",
+     "year": 2018,
+     "url": "https://doi.org/10.1016/S0140-6736(18)31923-8"
+    },
+    {
+     "id": "S3",
+     "title": "Sex-specific thresholds of high-sensitivity troponin in patients with suspected acute coronary syndrome",
+     "publisher": "Journal of the American College of Cardiology",
+     "year": 2019,
+     "url": "https://doi.org/10.1016/j.jacc.2019.07.082"
+    },
+    {
+     "id": "S4",
+     "title": "Fourth universal definition of myocardial infarction (2018)",
+     "publisher": "European Heart Journal (ESC/ACC/AHA/WHF)",
+     "year": 2019,
+     "url": "https://doi.org/10.1093/eurheartj/ehy462"
+    },
+    {
+     "id": "S5",
+     "title": "High-Sensitivity Cardiac Troponin I and T Assay Analytical Characteristics Designated by Manufacturer (v05/2023)",
+     "publisher": "IFCC Committee on Clinical Applications of Cardiac Bio-Markers",
+     "year": 2023,
+     "url": "https://pub-180a8d00f517477ba49634e6b2b147e3.r2.dev/2023/09/High-Sensitivity-Cardiac-Troponin-I-and-T-Assay-Analytical-Characteristics-Designated-By-Manufacturer-v052023.pdf"
+    },
+    {
+     "id": "S6",
+     "title": "Sex-specific 99th percentile upper reference limits for high sensitivity cardiac troponin assays derived using a universal sample bank",
+     "publisher": "Clinical Chemistry",
+     "year": 2020,
+     "url": "https://doi.org/10.1093/clinchem/hvz029"
+    },
+    {
+     "id": "S7",
+     "title": "Rapid rule-out of myocardial infarction using high-sensitivity troponin: cross-sectional survey of English hospitals",
+     "publisher": "Emergency Medicine Journal",
+     "year": 2020,
+     "url": "https://doi.org/10.1136/emermed-2019-209100"
+    }
+   ],
+   "short": "hs-troponin I (Abbott)",
+   "group": "Heart and kidney",
+   "aliases": [
+    "hs-troponin i",
+    "hs troponin i",
+    "troponin i",
+    "hs-ctni",
+    "hs ctni",
+    "ctni",
+    "high-sensitivity troponin i",
+    "high sensitivity troponin i",
+    "troponin"
+   ],
+   "scale": [
+    0,
+    60
+   ]
+  },
+  {
+   "id": "troponin_t_hs_roche",
+   "name": "High-sensitivity troponin T (Roche Elecsys)",
+   "units": [
+    {
+     "unit": "ng/L",
+     "toCanonical": 1
+    },
+    {
+     "unit": "pg/mL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "ng/mL",
+     "toCanonical": 1000
+    }
+   ],
+   "canonicalUnit": "ng/L",
+   "labRange": {
+    "female": [
+     0,
+     14
+    ],
+    "male": [
+     0,
+     22
+    ],
+    "any": [
+     0,
+     19
+    ],
+    "source": "University of Iowa Hospitals pathology handbook (Roche US 5th-generation hs-TnT; same values as Roche US Gen 5 package insert in IFCC table). EU insert: 9 / 17 / 14; NHS Lothian reports 1–9 (F) and 1–16 (M)",
+    "url": "https://www.healthcare.uiowa.edu/path_handbook/rhandbook/test3665.html"
+   },
+   "origin": "Roche's EU 99th percentiles (overall 14, women 9, men 17 ng/L) come from 533 people aged 20–71, of whom only 49.7% of women had measurable troponin; the US Gen 5 values (19 / 14 / 22) come from 1,301 people aged 21–89 [S5]. In the AACC Universal Sample Bank only 16–21% of healthy women had measurable hs-cTnT and the female 99th percentile was 10–11 ng/L [S6]. Outside the US most laboratories use the single 14 ng/L limit [S6][S8].",
+   "sexSpecific": {
+    "exists": true,
+    "female": 9,
+    "male": 17,
+    "what": "99th-percentile upper reference limit (EU package insert; US Gen 5 insert gives 14 and 22) defining myocardial injury",
+    "source": "[S5][S4]"
+   },
+   "contested": {
+    "band": [
+     9,
+     17
+    ],
+    "summary": "The Fourth Universal Definition recommends sex-specific 99th percentiles for all hs assays [S4], but Roche released only a combined 14 ng/L cut-off outside the US and 12 of 12 hs-cTnT institutions surveyed internationally used the combined value, versus 5 of 6 hs-cTnI users using sex-specific cut-offs [S8]. In England, where Roche is the assay in 57% of trusts, 54 of 97 trusts reporting a threshold used sex-specific values in 2019 [S7]. The High-STEACS outcome evidence [S1][S2][S3] was generated with the Abbott assay, not this one.",
+    "sources": [
+     "S4",
+     "S5",
+     "S7",
+     "S8"
+    ]
+   },
+   "guidanceInBand": "\"Significantly lower values are observed among women compared with men\" and \"sex-specific 99th percentile URLs are recommended for hs-cTn assays\", while noting \"there is controversy as to whether this approach provides valuable additional information\" [S4].",
+   "confidence": "high",
+   "sources": [
+    {
+     "id": "S4",
+     "title": "Fourth universal definition of myocardial infarction (2018)",
+     "publisher": "European Heart Journal",
+     "year": 2019,
+     "url": "https://doi.org/10.1093/eurheartj/ehy462"
+    },
+    {
+     "id": "S5",
+     "title": "High-Sensitivity Cardiac Troponin I and T Assay Analytical Characteristics Designated by Manufacturer (v05/2023)",
+     "publisher": "IFCC C-CB",
+     "year": 2023,
+     "url": "https://pub-180a8d00f517477ba49634e6b2b147e3.r2.dev/2023/09/High-Sensitivity-Cardiac-Troponin-I-and-T-Assay-Analytical-Characteristics-Designated-By-Manufacturer-v052023.pdf"
+    },
+    {
+     "id": "S6",
+     "title": "Sex-specific 99th percentile upper reference limits for high sensitivity cardiac troponin assays derived using a universal sample bank",
+     "publisher": "Clinical Chemistry",
+     "year": 2020,
+     "url": "https://doi.org/10.1093/clinchem/hvz029"
+    },
+    {
+     "id": "S7",
+     "title": "Rapid rule-out of myocardial infarction using high-sensitivity troponin: cross-sectional survey of English hospitals",
+     "publisher": "Emergency Medicine Journal",
+     "year": 2020,
+     "url": "https://doi.org/10.1136/emermed-2019-209100"
+    },
+    {
+     "id": "S8",
+     "title": "Implementation of high-sensitivity cardiac troponin: a survey of international institutions",
+     "publisher": "Critical Pathways in Cardiology",
+     "year": 2018,
+     "url": "https://doi.org/10.1097/HPC.0000000000000156"
+    },
+    {
+     "id": "S9",
+     "title": "Troponin T, High Sensitivity — laboratory handbook entry",
+     "publisher": "University of Iowa Hospitals & Clinics",
+     "year": 2023,
+     "url": "https://www.healthcare.uiowa.edu/path_handbook/rhandbook/test3665.html"
+    },
+    {
+     "id": "S10",
+     "title": "Troponin T (high sensitivity) — test directory",
+     "publisher": "NHS Lothian Laboratory Medicine",
+     "year": 2025,
+     "url": "https://edinburghlabmed.test.certus-tech.com/node/1955"
+    },
+    {
+     "id": "S1",
+     "title": "High sensitivity cardiac troponin and the under-diagnosis of myocardial infarction in women: prospective cohort study",
+     "publisher": "BMJ",
+     "year": 2015,
+     "url": "https://doi.org/10.1136/bmj.g7873"
+    },
+    {
+     "id": "S2",
+     "title": "High-sensitivity troponin in the evaluation of patients with suspected acute coronary syndrome: a stepped-wedge, cluster-randomised controlled trial (High-STEACS)",
+     "publisher": "The Lancet",
+     "year": 2018,
+     "url": "https://doi.org/10.1016/S0140-6736(18)31923-8"
+    },
+    {
+     "id": "S3",
+     "title": "Sex-specific thresholds of high-sensitivity troponin in patients with suspected acute coronary syndrome",
+     "publisher": "Journal of the American College of Cardiology",
+     "year": 2019,
+     "url": "https://doi.org/10.1016/j.jacc.2019.07.082"
+    }
+   ],
+   "short": "hs-troponin T (Roche)",
+   "group": "Heart and kidney",
+   "aliases": [
+    "hs-troponin t",
+    "hs troponin t",
+    "troponin t",
+    "hs-ctnt",
+    "hs ctnt",
+    "ctnt",
+    "high-sensitivity troponin t",
+    "high sensitivity troponin t"
+   ],
+   "scale": [
+    0,
+    60
+   ]
+  },
+  {
+   "id": "troponin_i_hs_siemens",
+   "name": "High-sensitivity troponin I (Siemens Atellica / ADVIA Centaur TnIH)",
+   "units": [
+    {
+     "unit": "ng/L",
+     "toCanonical": 1
+    },
+    {
+     "unit": "pg/mL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "ng/mL",
+     "toCanonical": 1000
+    }
+   ],
+   "canonicalUnit": "ng/L",
+   "labRange": {
+    "female": [
+     0,
+     38.6
+    ],
+    "male": [
+     0,
+     53.5
+    ],
+    "any": [
+     0,
+     45.4
+    ],
+    "source": "Siemens Atellica High-Sensitivity TnI package insert (FDA 510(k) July 2018) as tabulated by IFCC C-CB v05/2023; ADVIA Centaur: 39.6 / 58.0 / 46.5",
+    "url": "https://pub-180a8d00f517477ba49634e6b2b147e3.r2.dev/2023/09/High-Sensitivity-Cardiac-Troponin-I-and-T-Assay-Analytical-Characteristics-Designated-By-Manufacturer-v052023.pdf"
+   },
+   "origin": "Manufacturer 99th percentiles from 2,001 people aged 22–91 (1,007 women, 994 men), non-parametric, with 62% of women measurable above the LoD [S5]. The Universal Sample Bank re-derivation gave 38 overall, 44 men, 26 women (Atellica) [S6]. Siemens values are numerically higher than other assays because the assays are not harmonised; a value is only interpretable against its own assay's limit [S6].",
+   "sexSpecific": {
+    "exists": true,
+    "female": 38.6,
+    "male": 53.5,
+    "what": "99th-percentile upper reference limit defining myocardial injury",
+    "source": "[S5][S4]"
+   },
+   "contested": {
+    "band": [
+     38.6,
+     53.5
+    ],
+    "summary": "No outcome trial equivalent to High-STEACS exists for this assay; the case for sex-specific limits rests on the Fourth Universal Definition's general recommendation [S4] and on the consistently lower female distribution (26 vs 44 ng/L in the sample bank) [S6].",
+    "sources": [
+     "S4",
+     "S5",
+     "S6"
+    ]
+   },
+   "guidanceInBand": "\"sex-specific 99th percentile URLs are recommended for hs-cTn assays\" [S4]; the 99th percentile \"must be determined for each specific assay\" [S4].",
+   "confidence": "medium",
+   "sources": [
+    {
+     "id": "S4",
+     "title": "Fourth universal definition of myocardial infarction (2018)",
+     "publisher": "European Heart Journal",
+     "year": 2019,
+     "url": "https://doi.org/10.1093/eurheartj/ehy462"
+    },
+    {
+     "id": "S5",
+     "title": "High-Sensitivity Cardiac Troponin I and T Assay Analytical Characteristics Designated by Manufacturer (v05/2023)",
+     "publisher": "IFCC C-CB",
+     "year": 2023,
+     "url": "https://pub-180a8d00f517477ba49634e6b2b147e3.r2.dev/2023/09/High-Sensitivity-Cardiac-Troponin-I-and-T-Assay-Analytical-Characteristics-Designated-By-Manufacturer-v052023.pdf"
+    },
+    {
+     "id": "S6",
+     "title": "Sex-specific 99th percentile upper reference limits for high sensitivity cardiac troponin assays derived using a universal sample bank",
+     "publisher": "Clinical Chemistry",
+     "year": 2020,
+     "url": "https://doi.org/10.1093/clinchem/hvz029"
+    }
+   ],
+   "short": "hs-troponin I (Siemens)",
+   "group": "Heart and kidney",
+   "aliases": [
+    "siemens troponin",
+    "atellica troponin",
+    "centaur troponin"
+   ],
+   "scale": [
+    0,
+    80
+   ]
+  },
+  {
+   "id": "troponin_i_hs_beckman",
+   "name": "High-sensitivity troponin I (Beckman Coulter Access hsTnI)",
+   "units": [
+    {
+     "unit": "ng/L",
+     "toCanonical": 1
+    },
+    {
+     "unit": "pg/mL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "ng/mL",
+     "toCanonical": 1000
+    }
+   ],
+   "canonicalUnit": "ng/L",
+   "labRange": {
+    "female": [
+     0,
+     11.6
+    ],
+    "male": [
+     0,
+     19.8
+    ],
+    "any": [
+     0,
+     17.5
+    ],
+    "source": "Beckman Coulter Access 2 hsTnI package insert (US LiHep plasma, June 2018) as tabulated by IFCC C-CB v05/2023",
+    "url": "https://pub-180a8d00f517477ba49634e6b2b147e3.r2.dev/2023/09/High-Sensitivity-Cardiac-Troponin-I-and-T-Assay-Analytical-Characteristics-Designated-By-Manufacturer-v052023.pdf"
+   },
+   "origin": "Manufacturer 99th percentiles from 1,089 people aged 21–99 (595 women, 494 men), non-parametric [S5]. In the Universal Sample Bank only 48% of healthy women had measurable values, the robust female 99th percentile could not be computed, and the non-parametric values were 18 overall, 18 men, 20 women [S6].",
+   "sexSpecific": {
+    "exists": true,
+    "female": 11.6,
+    "male": 19.8,
+    "what": "99th-percentile upper reference limit defining myocardial injury",
+    "source": "[S5][S4]"
+   },
+   "contested": {
+    "band": [
+     11.6,
+     19.8
+    ],
+    "summary": "The female limit is defined from a population in which fewer than half of women have a measurable result, which the Clin Chem authors say disqualifies the assay from hs status for women [S6]; the IFCC footnote warns that manufacturers may list assays that do not meet the ≥50%-measurable criterion for both sexes [S5]. No sex-specific outcome trial exists for this assay.",
+    "sources": [
+     "S5",
+     "S6"
+    ]
+   },
+   "guidanceInBand": "\"sex-specific 99th percentile URLs are recommended for hs-cTn assays\" [S4]; a hs assay should \"measure cTn values above the assay's LoD in ≥ 50% of healthy individuals\" [S4].",
+   "confidence": "medium",
+   "sources": [
+    {
+     "id": "S4",
+     "title": "Fourth universal definition of myocardial infarction (2018)",
+     "publisher": "European Heart Journal",
+     "year": 2019,
+     "url": "https://doi.org/10.1093/eurheartj/ehy462"
+    },
+    {
+     "id": "S5",
+     "title": "High-Sensitivity Cardiac Troponin I and T Assay Analytical Characteristics Designated by Manufacturer (v05/2023)",
+     "publisher": "IFCC C-CB",
+     "year": 2023,
+     "url": "https://pub-180a8d00f517477ba49634e6b2b147e3.r2.dev/2023/09/High-Sensitivity-Cardiac-Troponin-I-and-T-Assay-Analytical-Characteristics-Designated-By-Manufacturer-v052023.pdf"
+    },
+    {
+     "id": "S6",
+     "title": "Sex-specific 99th percentile upper reference limits for high sensitivity cardiac troponin assays derived using a universal sample bank",
+     "publisher": "Clinical Chemistry",
+     "year": 2020,
+     "url": "https://doi.org/10.1093/clinchem/hvz029"
+    }
+   ],
+   "short": "hs-troponin I (Beckman)",
+   "group": "Heart and kidney",
+   "aliases": [
+    "beckman troponin",
+    "access troponin"
+   ],
+   "scale": [
+    0,
+    40
+   ]
+  },
+  {
+   "id": "creatinine",
+   "name": "Creatinine (serum) and eGFR",
+   "units": [
+    {
+     "unit": "mg/dL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "µmol/L",
+     "toCanonical": 0.01131
+    }
+   ],
+   "canonicalUnit": "mg/dL",
+   "labRange": {
+    "female": [
+     0.57,
+     1.0
+    ],
+    "male": [
+     0.76,
+     1.27
+    ],
+    "any": null,
+    "source": "Labcorp test 001370 (kinetic Jaffe), ages ≥15; attributed to 'Labcorp internal studies'",
+    "url": "https://www.labcorp.com/tests/001370/creatinine"
+   },
+   "origin": "Labcorp's sex-partitioned interval is attributed only to 'Labcorp internal studies' with no population or year [S11]; ARUP publishes no interval ('By report') [S12]. Creatinine production depends on muscle mass: lean mass predicted serum creatinine but not cystatin C in 170 healthy adults [S16]. The eGFR equation encodes sex with κ = 0.7 (F) vs 0.9 (M), α = −0.241 vs −0.302, and a 1.012 multiplier for women, fitted on 8,254 people (43.7% female) [S14][S15].",
+   "sexSpecific": {
+    "exists": true,
+    "female": null,
+    "male": null,
+    "what": "CKD-EPI 2021 female sex multiplier (plus sex-specific κ 0.7/0.9 and α −0.241/−0.302) in the eGFR equation",
+    "source": "[S14]"
+   },
+   "contested": {
+    "band": [
+     0.8,
+     1.0
+    ],
+    "summary": "A woman with low muscle mass can have a creatinine inside the female range (0.57–1.00 mg/dL) while her filtration is reduced, because creatinine reflects muscle mass as well as GFR [S16]; KDIGO 2024 names 'reduced muscle mass' as a reason to prefer cystatin C-based eGFR [S17]. The female range itself is undocumented beyond 'internal studies' [S11]. No study quantifying CKD under-detection in women attributable to the female range was verified.",
+    "sources": [
+     "S11",
+     "S16",
+     "S17"
+    ]
+   },
+   "guidanceInBand": "\"We recommend using eGFRcr-cys in clinical situations when eGFRcr is less accurate and GFR affects clinical decision-making (1C)\" and \"Consider eGFRcys rather than eGFRcr-cys in otherwise healthy populations with decreased creatinine generation due to reduced muscle mass\" [S17].",
+   "confidence": "medium",
+   "sources": [
+    {
+     "id": "S11",
+     "title": "Creatinine (test 001370)",
+     "publisher": "Labcorp",
+     "year": 2025,
+     "url": "https://www.labcorp.com/tests/001370/creatinine"
+    },
+    {
+     "id": "S12",
+     "title": "Creatinine, Serum or Plasma (0020025)",
+     "publisher": "ARUP Laboratories",
+     "year": 2025,
+     "url": "https://ltd.aruplab.com/Tests/Pub/0020025"
+    },
+    {
+     "id": "S13",
+     "title": "Cystatin C with eGFR (test 121265)",
+     "publisher": "Labcorp",
+     "year": 2025,
+     "url": "https://www.labcorp.com/tests/121265/cystatin-c-with-glomerular-filtration-rate-estimated-egfr"
+    },
+    {
+     "id": "S14",
+     "title": "New creatinine- and cystatin C–based equations to estimate GFR without race",
+     "publisher": "New England Journal of Medicine",
+     "year": 2021,
+     "url": "https://doi.org/10.1056/NEJMoa2102953"
+    },
+    {
+     "id": "S15",
+     "title": "CKD-EPI Creatinine Equation (2021)",
+     "publisher": "National Kidney Foundation",
+     "year": 2021,
+     "url": "https://www.kidney.org/professionals/kdoqi/gfr_calculator/formula"
+    },
+    {
+     "id": "S16",
+     "title": "Influence of muscle mass and physical activity on serum and urinary creatinine and serum cystatin C",
+     "publisher": "Clinical Journal of the American Society of Nephrology",
+     "year": 2008,
+     "url": "https://doi.org/10.2215/CJN.02870707"
+    },
+    {
+     "id": "S17",
+     "title": "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD — Summary of Recommendations and Practice Points",
+     "publisher": "KDIGO / Kidney International",
+     "year": 2024,
+     "url": "https://kdigo.org/wp-content/uploads/2026/05/KDIGO-2024-CKD-Guideline-Summary-Recommendations-and-Practice-Points.pdf"
+    }
+   ],
+   "short": "Creatinine",
+   "group": "Heart and kidney",
+   "aliases": [
+    "creatinine",
+    "creat",
+    "serum creatinine",
+    "cr"
+   ],
+   "scale": [
+    0.3,
+    1.8
+   ]
+  },
+  {
+   "id": "nt_probnp",
+   "name": "NT-proBNP",
+   "units": [
+    {
+     "unit": "pg/mL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "ng/L",
+     "toCanonical": 1
+    }
+   ],
+   "canonicalUnit": "pg/mL",
+   "labRange": {
+    "female": [
+     0,
+     178
+    ],
+    "male": [
+     0,
+     93
+    ],
+    "any": [
+     0,
+     125
+    ],
+    "source": "University of Iowa Hospitals pathology handbook, ages 19–44 (95th percentiles in patients without CHF; rises with age: F 65–74 y 0–353, M 65–74 y 0–229); 'any' = ESC 2021 non-acute upper limit of normal",
+    "url": "https://www.healthcare.uiowa.edu/path_handbook/rhandbook/test2621.html"
+   },
+   "origin": "The 125 pg/mL rule-out is the ESC's stated 'upper limit of normal in the non-acute setting' [S19], a single value for both sexes. Healthy-population data show women higher at every age: in 18,356 Scots without CVD, median (97.5th) NT-proBNP was 51 (196) pg/mL in women vs 21 (104) in men under 30 [S20]. Hospital reference ranges that are sex-split (e.g. Iowa) therefore give women a higher upper limit than men [S18].",
+   "sexSpecific": {
+    "exists": false,
+    "female": null,
+    "male": null,
+    "what": "No guideline sex-specific threshold; ESC uses NT-proBNP <125 pg/mL (BNP <35) for all adults",
+    "source": "[S19]"
+   },
+   "contested": {
+    "band": [
+     125,
+     300
+    ],
+    "summary": "NT-proBNP ≥125 pg/mL was present in 9.8% of healthy women vs 1.4% of men under 30 (OR for women 9.48, 95% CI 5.60–16.1 after adjustment); the authors say 'An NT-proBNP ≥125 pg/mL is common in females without classical cardiovascular risk factors' and call for age- and sex-specific thresholds [S20]. In ARIC, absolute risk at guideline thresholds was lower in White women and higher in Black men [S21]. The direction is over-flagging of healthy women, the opposite of troponin.",
+    "sources": [
+     "S20",
+     "S21"
+    ]
+   },
+   "guidanceInBand": "\"A plasma concentration of … NT-proBNP <125 pg/mL … make a diagnosis of HF unlikely\"; above it, echocardiography is advised, bearing in mind that elevated NPs have causes including \"AF, increasing age, and acute or chronic kidney disease\" [S19].",
+   "confidence": "medium",
+   "sources": [
+    {
+     "id": "S18",
+     "title": "NT-proBNP — laboratory handbook entry",
+     "publisher": "University of Iowa Hospitals & Clinics",
+     "year": 2023,
+     "url": "https://www.healthcare.uiowa.edu/path_handbook/rhandbook/test2621.html"
+    },
+    {
+     "id": "S19",
+     "title": "2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure",
+     "publisher": "European Heart Journal",
+     "year": 2021,
+     "url": "https://doi.org/10.1093/eurheartj/ehab368"
+    },
+    {
+     "id": "S20",
+     "title": "Reference ranges for NT-proBNP and risk factors for higher NT-proBNP concentrations in a large general population cohort",
+     "publisher": "Circulation: Heart Failure",
+     "year": 2022,
+     "url": "https://doi.org/10.1161/CIRCHEARTFAILURE.121.009427"
+    },
+    {
+     "id": "S21",
+     "title": "Sex and race differences in N-terminal pro-B-type natriuretic peptide concentration and absolute risk of heart failure in the community",
+     "publisher": "JAMA Cardiology",
+     "year": 2022,
+     "url": "https://doi.org/10.1001/jamacardio.2022.0680"
+    }
+   ],
+   "short": "NT-proBNP",
+   "group": "Heart and kidney",
+   "aliases": [
+    "nt-probnp",
+    "nt probnp",
+    "ntprobnp",
+    "pro-bnp",
+    "probnp",
+    "n-terminal pro b-type natriuretic peptide"
+   ],
+   "scale": [
+    0,
+    600
+   ]
+  },
+  {
+   "id": "creatine_kinase",
+   "name": "Creatine kinase (CK)",
+   "units": [
+    {
+     "unit": "U/L",
+     "toCanonical": 1
+    },
+    {
+     "unit": "IU/L",
+     "toCanonical": 1
+    },
+    {
+     "unit": "µkat/L",
+     "toCanonical": 60
+    }
+   ],
+   "canonicalUnit": "U/L",
+   "labRange": {
+    "female": [
+     32,
+     182
+    ],
+    "male": [
+     49,
+     439
+    ],
+    "any": null,
+    "source": "Labcorp test 001362, ages 18–50 (kinetic 340 nm); no source footnote",
+    "url": "https://www.labcorp.com/tests/001362/creatine-kinase-ck-total"
+   },
+   "origin": "Labcorp gives no provenance for its CK intervals [S22]. Population-derived 97.5th percentiles are higher: 207 U/L for women in the Tromsø Study (n = 6,904 after exclusions) [S23]; 295 U/L for white women and 487 U/L for Black women in NHANES 2011–2014 (n = 10,096) [S25]; in Amsterdam, limits were 2–5 times the manufacturer's and 49% of people of African descent exceeded them [S24].",
+   "sexSpecific": {
+    "exists": true,
+    "female": 182,
+    "male": 439,
+    "what": "Laboratory upper reference limit (Labcorp, 18–50 y); no guideline-set sex threshold exists",
+    "source": "[S22]"
+   },
+   "contested": {
+    "band": [
+     182,
+     487
+    ],
+    "summary": "Every population study places the female 97.5th percentile above the 182 U/L lab limit: 207 (Norway) [S23], 295 (white US women) and 487 (Black US women) [S25]. Ancestry has a larger effect than sex-partitioning captures: ORs for elevated CK were 5.08 for Black women and 8.39 for Black men, and body composition did not explain the difference [S25]; 49% of people of African descent exceeded the manufacturer's limit in Amsterdam [S24].",
+    "sources": [
+     "S23",
+     "S24",
+     "S25"
+    ]
+   },
+   "guidanceInBand": "No society guideline wording on sex-specific CK interpretation was verified; the Amsterdam authors conclude \"The variation in CK activity within the population is wider than previously suggested\" and that raising the URL \"may improve the use of statins\" [S24].",
+   "confidence": "medium",
+   "sources": [
+    {
+     "id": "S22",
+     "title": "Creatine Kinase (CK), Total (test 001362)",
+     "publisher": "Labcorp",
+     "year": 2025,
+     "url": "https://www.labcorp.com/tests/001362/creatine-kinase-ck-total"
+    },
+    {
+     "id": "S23",
+     "title": "Are the currently used reference intervals for creatine kinase (CK) reflecting the general population? The Tromsø Study",
+     "publisher": "Clinical Chemistry and Laboratory Medicine",
+     "year": 2012,
+     "url": "https://doi.org/10.1515/cclm.2011.776"
+    },
+    {
+     "id": "S24",
+     "title": "Distribution of creatine kinase in the general population: implications for statin therapy",
+     "publisher": "American Heart Journal",
+     "year": 2007,
+     "url": "https://doi.org/10.1016/j.ahj.2007.06.008"
+    },
+    {
+     "id": "S25",
+     "title": "Creatine kinase in the U.S. population: impact of demographics, comorbidities, and body composition on the normal range",
+     "publisher": "Medicine (Baltimore)",
+     "year": 2016,
+     "url": "https://doi.org/10.1097/MD.0000000000004344"
+    }
+   ],
+   "short": "Creatine kinase",
+   "group": "Heart and kidney",
+   "aliases": [
+    "creatine kinase",
+    "ck",
+    "cpk",
+    "creatine phosphokinase"
+   ],
+   "scale": [
+    0,
+    500
+   ]
+  },
+  {
+   "id": "uric_acid",
+   "name": "Uric acid (urate)",
+   "units": [
+    {
+     "unit": "mg/dL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "µmol/L",
+     "toCanonical": 0.01681
+    },
+    {
+     "unit": "mmol/L",
+     "toCanonical": 16.81
+    }
+   ],
+   "canonicalUnit": "mg/dL",
+   "labRange": {
+    "female": [
+     2.6,
+     6.2
+    ],
+    "male": [
+     3.8,
+     8.4
+    ],
+    "any": null,
+    "source": "Labcorp test 001057 (uricase), female 18–50 y (51–70 y: 3.0–7.2; ≥71 y: 3.1–7.9), male ≥18 y; male interval attributed to 'LabCorp internal studies', female interval unattributed",
+    "url": "https://www.labcorp.com/tests/001057/uric-acid"
+   },
+   "origin": "Labcorp attributes the male interval to internal studies and gives no source for the female interval [S27]. The disease thresholds have a different origin: urate crystallises above its saturation point, and the ACR defines asymptomatic hyperuricemia 'as an SU concentration of ≥6.8 mg/dl' [S28]; treatment targets of <6 mg/dL (ACR, EULAR) are set below saturation so crystals dissolve [S28][S29].",
+   "sexSpecific": {
+    "exists": false,
+    "female": null,
+    "male": null,
+    "what": "No sex-specific guideline threshold: ACR and EULAR targets (<6 mg/dL; EULAR <5 in severe gout) and the ≥6.8 mg/dL hyperuricemia definition apply to both sexes; only lab reference intervals are sex-partitioned",
+    "source": "[S28][S29]"
+   },
+   "contested": {
+    "band": [
+     6.0,
+     6.8
+    ],
+    "summary": "The female lab range is a population distribution, not a risk threshold, and for older women (7.2 and 7.9 mg/dL upper limits) it extends above both the 6 mg/dL treatment target and the 6.8 mg/dL saturation-based definition of hyperuricemia [S27][S28]. In Framingham (2,476 women, 104 incident gout cases) gout risk in women rose in a graded way with urate, though less steeply than in men [S30]. The ACR notes 'Gout has differential impact on patients by sex' but its patient panel was eight men [S28].",
+    "sources": [
+     "S27",
+     "S28",
+     "S30"
+    ]
+   },
+   "guidanceInBand": "\"Initiating ULT is conditionally recommended against in patients with asymptomatic hyperuricemia\" (≥6.8 mg/dl without flares or tophi); for diagnosed gout, \"we strongly recommend continuing ULT to achieve and maintain an SU target of <6 mg/dl over no target\" [S28]; EULAR: \"<6 mg/dL (360 µmol/L) and <5 mg/dL (300 µmol/L) in those with severe gout\" [S29].",
+   "confidence": "medium",
+   "sources": [
+    {
+     "id": "S27",
+     "title": "Uric Acid (test 001057)",
+     "publisher": "Labcorp",
+     "year": 2025,
+     "url": "https://www.labcorp.com/tests/001057/uric-acid"
+    },
+    {
+     "id": "S28",
+     "title": "2020 American College of Rheumatology guideline for the management of gout",
+     "publisher": "Arthritis Care & Research",
+     "year": 2020,
+     "url": "https://doi.org/10.1002/acr.24180"
+    },
+    {
+     "id": "S29",
+     "title": "2016 updated EULAR evidence-based recommendations for the management of gout",
+     "publisher": "Annals of the Rheumatic Diseases",
+     "year": 2017,
+     "url": "https://doi.org/10.1136/annrheumdis-2016-209707"
+    },
+    {
+     "id": "S30",
+     "title": "Epidemiology of gout in women: fifty-two-year followup of a prospective cohort",
+     "publisher": "Arthritis & Rheumatism",
+     "year": 2010,
+     "url": "https://doi.org/10.1002/art.27338"
+    }
+   ],
+   "short": "Uric acid",
+   "group": "Heart and kidney",
+   "aliases": [
+    "uric acid",
+    "urate",
+    "serum urate",
+    "ua"
+   ],
+   "scale": [
+    1,
+    10
+   ]
+  },
+  {
+   "id": "alt",
+   "name": "ALT (alanine aminotransferase)",
+   "units": [
+    {
+     "unit": "U/L",
+     "toCanonical": 1
+    },
+    {
+     "unit": "IU/L",
+     "toCanonical": 1
+    },
+    {
+     "unit": "ukat/L",
+     "toCanonical": 60
+    },
+    {
+     "unit": "nkat/L",
+     "toCanonical": 0.06
+    }
+   ],
+   "canonicalUnit": "U/L",
+   "labRange": {
+    "female": [
+     0,
+     33
+    ],
+    "male": [
+     0,
+     45
+    ],
+    "any": null,
+    "source": "LabCorp (female <33, male <45 U/L, adults 18+); ARUP prints 5-50 'by report'; Leeds NHS adults <=40 (no sex split); RCPA/AACB harmonised male 5-40, female 5-35",
+    "url": "https://labcorp.com/assets/5286"
+   },
+   "origin": "Lab limits are conventionally the central 95% of a 'healthy' reference group, and for ALT those groups historically included people with undiagnosed fatty liver and were assembled without regard to BMI; a survey of 67 laboratories in one US state found ALT upper limits from 31 to 72 U/L, set variously from manufacturer inserts, local controls or textbooks [S2]. LabCorp derived its current female <33 / male <45 U/L from an internal study of more than 260,000 subjects and cites Prati 2002 as a reason for lowering [S4]; Leeds NHS uses a Siemens insert traced to a 2000 textbook [S7]; the Australasian harmonised 40/35 was confirmed against 1,876 healthy adults [S9].",
+   "sexSpecific": {
+    "exists": true,
+    "female": 25,
+    "male": 33,
+    "what": "ACG 2017 'true healthy normal' upper limit of ALT (range quoted as 19-25 U/L women, 29-33 U/L men); values above should be assessed",
+    "source": "[S2]"
+   },
+   "contested": {
+    "band": [
+     19,
+     50
+    ],
+    "summary": "Prati 2002 (6,835 screened blood donors, Milan) set the 95th-percentile limit at 30 U/L men and 19 U/L women against the then-current 40/30, raising sensitivity for HCV viraemia from 55% to 76.3% [S1]. Ruhl & Everhart 2012 (NHANES, 3,747 low-risk vs 259 HCV-positive) found optimal cut-offs of 29 U/L men and 22 U/L women, which would label 28.3% of US women 'elevated' [S3]. ACG 2017 adopted 19-25 U/L for women, but laboratories still report 33-50 U/L, and the 2021 IFCC-standardised re-run of the Prati cohort (21,296 donors) gave 30 U/L for women because the standardised assay reads higher [S10, S11].",
+    "sources": [
+     "S1",
+     "S2",
+     "S3",
+     "S4",
+     "S10",
+     "S11",
+     "S12"
+    ]
+   },
+   "guidanceInBand": "ACG 2017: 'A normal ALT should be <29-33 IU/l in males and 19-25 IU/l in females. Minimal elevations may be approached by a history and examination, discontinuation of hepatotoxic medicines and all alcohol consumption, in addition to an evaluation for hemochromatosis, fatty liver and viral hepatitis.' A borderline elevation is '<2X ULN'; for levels <5X ULN the history and tests 'should assess for viral hepatitis B and C, alcoholic and NAFLD, hemochromatosis, Wilson's disease, alpha-1-anti-trypsin deficiency, autoimmune hepatitis and consider drugs/supplement related injury' (strong recommendation, very low level of evidence) [S2].",
+   "confidence": "high",
+   "sources": [
+    {
+     "id": "S1",
+     "title": "Updated definitions of healthy ranges for serum alanine aminotransferase levels",
+     "publisher": "Annals of Internal Medicine (Prati et al.)",
+     "year": 2002,
+     "url": "https://doi.org/10.7326/0003-4819-137-1-200207020-00006"
+    },
+    {
+     "id": "S2",
+     "title": "ACG Clinical Guideline: Evaluation of Abnormal Liver Chemistries",
+     "publisher": "American Journal of Gastroenterology (Kwo, Cohen, Lim)",
+     "year": 2017,
+     "url": "https://doi.org/10.1038/ajg.2016.517"
+    },
+    {
+     "id": "S3",
+     "title": "Upper limits of normal for alanine aminotransferase activity in the United States population",
+     "publisher": "Hepatology (Ruhl & Everhart)",
+     "year": 2012,
+     "url": "https://doi.org/10.1002/hep.24725"
+    },
+    {
+     "id": "S4",
+     "title": "New ALT Reference Intervals for Children and Adults",
+     "publisher": "LabCorp",
+     "year": 2013,
+     "url": "https://labcorp.com/assets/5286"
+    },
+    {
+     "id": "S7",
+     "title": "Blood Sciences Reference Range Database v3.20",
+     "publisher": "Leeds Teaching Hospitals NHS Trust",
+     "year": 2026,
+     "url": "https://www.leedsth.nhs.uk/wp-content/uploads/2026/08/BSHC-REC-317b_Blood-Sciences-Reference-Range-Database_v3.20.pdf"
+    },
+    {
+     "id": "S9",
+     "title": "Harmonising Adult Reference Intervals in Australia and New Zealand - the Continuing Story",
+     "publisher": "Clinical Biochemist Reviews (Koerbin & Tate, AACB)",
+     "year": 2016,
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5111244"
+    },
+    {
+     "id": "S10",
+     "title": "Definition of Healthy Ranges for Alanine Aminotransferase Levels: A 2021 Update",
+     "publisher": "Hepatology Communications (Valenti et al.)",
+     "year": 2021,
+     "url": "https://doi.org/10.1002/hep4.1794"
+    },
+    {
+     "id": "S11",
+     "title": "The Quest to Standardize ALT Reference Intervals",
+     "publisher": "Clinical Laboratory News, ADLM",
+     "year": 2024,
+     "url": "https://myadlm.org/cln/articles/2024/januaryfebruary/the-quest-to-standardize-alt-reference-intervals"
+    },
+    {
+     "id": "S12",
+     "title": "Common reference intervals for AST, ALT and GGT in serum: results from an IFCC multicenter study",
+     "publisher": "Clinical Chemistry and Laboratory Medicine (Ceriotti et al.)",
+     "year": 2010,
+     "url": "https://doi.org/10.1515/cclm.2010.315"
+    }
+   ],
+   "short": "ALT",
+   "group": "Liver and metabolic",
+   "aliases": [
+    "alt",
+    "alanine aminotransferase",
+    "alanine transaminase",
+    "sgpt"
+   ],
+   "scale": [
+    0,
+    80
+   ]
+  },
+  {
+   "id": "ast",
+   "name": "AST (aspartate aminotransferase)",
+   "units": [
+    {
+     "unit": "U/L",
+     "toCanonical": 1
+    },
+    {
+     "unit": "IU/L",
+     "toCanonical": 1
+    },
+    {
+     "unit": "ukat/L",
+     "toCanonical": 60
+    }
+   ],
+   "canonicalUnit": "U/L",
+   "labRange": {
+    "female": [
+     0,
+     30
+    ],
+    "male": [
+     0,
+     35
+    ],
+    "any": [
+     0,
+     35
+    ],
+    "source": "RCPA/AACB harmonised via Alfred Health (male <35, female <30 U/L); Leeds NHS <35 all adults; LabCorp prints no interval on its test page",
+    "url": "https://pathology.alfred.org.au/handbook/?testid=345"
+   },
+   "origin": "The IFCC multicentre reference study (765 adults, 411 women) found the sex difference in AST upper limits was only 1.7 U/L and so defined a single interval of 11-34 U/L [S12]; Leeds NHS adopts this as <35 [S7]. The Australasian harmonisation committee nevertheless adopted sex-specific limits, 5-35 U/L men and 5-30 U/L women, confirmed against 1,876 healthy adults [S9]. The ACG says AST and ALT ranges 'can vary between different labs' and works in multiples of the local upper limit [S2].",
+   "sexSpecific": {
+    "exists": true,
+    "female": 30,
+    "male": 35,
+    "what": "Laboratory harmonised upper reference limit (RCPA/AACB, Australia/NZ); no clinical guideline sets a sex-specific AST threshold",
+    "source": "[S9]"
+   },
+   "contested": {
+    "band": [
+     30,
+     35
+    ],
+    "summary": "Reference studies disagree on whether AST needs a sex split: the IFCC study found a 1.7 U/L sex gap and used one interval, 11-34 U/L [S12], while RCPA/AACB adopted 35/30 [S9]. ACG cites a German cohort in which AST >18 U/L carried 3x all-cause mortality and a Korean cohort in which AST 30-39 IU/L carried 8x liver-related death risk versus <20, placing the top of every lab range inside a risk gradient [S2].",
+    "sources": [
+     "S2",
+     "S9",
+     "S12"
+    ]
+   },
+   "guidanceInBand": "ACG 2017: 'A borderline AST and/or ALT elevation is defined as <2X ULN'; for levels <5X ULN, 'the history and laboratory testing should assess for viral hepatitis B and C, alcoholic and NAFLD, hemochromatosis, Wilson's disease, alpha-1-anti-trypsin deficiency, autoimmune hepatitis and consider drugs/supplement related injury' [S2].",
+   "confidence": "medium",
+   "sources": [
+    {
+     "id": "S2",
+     "title": "ACG Clinical Guideline: Evaluation of Abnormal Liver Chemistries",
+     "publisher": "American Journal of Gastroenterology",
+     "year": 2017,
+     "url": "https://doi.org/10.1038/ajg.2016.517"
+    },
+    {
+     "id": "S7",
+     "title": "Blood Sciences Reference Range Database v3.20",
+     "publisher": "Leeds Teaching Hospitals NHS Trust",
+     "year": 2026,
+     "url": "https://www.leedsth.nhs.uk/wp-content/uploads/2026/08/BSHC-REC-317b_Blood-Sciences-Reference-Range-Database_v3.20.pdf"
+    },
+    {
+     "id": "S9",
+     "title": "Harmonising Adult Reference Intervals in Australia and New Zealand - the Continuing Story",
+     "publisher": "Clinical Biochemist Reviews",
+     "year": 2016,
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5111244"
+    },
+    {
+     "id": "S12",
+     "title": "Common reference intervals for AST, ALT and GGT in serum: results from an IFCC multicenter study",
+     "publisher": "Clinical Chemistry and Laboratory Medicine",
+     "year": 2010,
+     "url": "https://doi.org/10.1515/cclm.2010.315"
+    },
+    {
+     "id": "S13",
+     "title": "AST (Aspartate AminoTransferase) - Pathology Handbook",
+     "publisher": "Alfred Health",
+     "year": 2026,
+     "url": "https://pathology.alfred.org.au/handbook/?testid=345"
+    },
+    {
+     "id": "S14",
+     "title": "Aspartate Aminotransferase (AST), test 001123",
+     "publisher": "LabCorp",
+     "year": 2026,
+     "url": "https://www.labcorp.com/tests/001123/aspartate-aminotransferase-ast"
+    }
+   ],
+   "short": "AST",
+   "group": "Liver and metabolic",
+   "aliases": [
+    "ast",
+    "aspartate aminotransferase",
+    "aspartate transaminase",
+    "sgot"
+   ],
+   "scale": [
+    0,
+    80
+   ]
+  },
+  {
+   "id": "ggt",
+   "name": "GGT (gamma-glutamyl transferase)",
+   "units": [
+    {
+     "unit": "U/L",
+     "toCanonical": 1
+    },
+    {
+     "unit": "IU/L",
+     "toCanonical": 1
+    },
+    {
+     "unit": "ukat/L",
+     "toCanonical": 60
+    }
+   ],
+   "canonicalUnit": "U/L",
+   "labRange": {
+    "female": [
+     0,
+     60
+    ],
+    "male": [
+     0,
+     65
+    ],
+    "any": null,
+    "source": "LabCorp (female 0-60, male 0-65 IU/L); Leeds NHS female 6-40, male 12-68; RCPA/AACB harmonised female 5-35, male 5-50",
+    "url": "https://www.labcorp.com/tests/001958/gamma-glutamyl-transferase-ggt"
+   },
+   "origin": "The IFCC multicentre study derived GGT intervals of 6-40 U/L in women and 12-68 U/L in men after excluding Nordic samples whose upper limits were higher, and concluded a worldwide common GGT interval 'appears unlikely due to differences among populations' [S12]; Leeds NHS uses exactly these [S7]. The Australasian committee found 'Most data sets show male activities are greater than for females' and set 5-50 men, 5-35 women [S9]. LabCorp's 0-65/0-60 derivation is not stated on its test page [S15].",
+   "sexSpecific": {
+    "exists": true,
+    "female": 35,
+    "male": 50,
+    "what": "Laboratory harmonised upper reference limit (RCPA/AACB); IFCC study gives 40/68; no clinical guideline sets a sex-specific GGT threshold",
+    "source": "[S9]"
+   },
+   "contested": {
+    "band": [
+     35,
+     60
+    ],
+    "summary": "Screened reference populations put the female upper limit at 35-40 U/L [S9, S12], but LabCorp reports to 60 U/L with only a 5 U/L gap from men [S15], so a woman at 50 U/L is normal at LabCorp and above range in the NHS trust and Australian labs opened. The IFCC authors found GGT limits differ by region, so the female limit is population-dependent [S12].",
+    "sources": [
+     "S9",
+     "S12",
+     "S15",
+     "S7"
+    ]
+   },
+   "guidanceInBand": "ACG 2017, Recommendation 13: 'An elevation of alkaline phosphatase should be confirmed with an elevation in GGT. Given its lack of specificity for liver disease, GGT should not be used as a screening test for underlying liver disease in the absence of other abnormal liver chemistries. (Strong recommendation, very low level of evidence)' [S2].",
+   "confidence": "medium",
+   "sources": [
+    {
+     "id": "S2",
+     "title": "ACG Clinical Guideline: Evaluation of Abnormal Liver Chemistries",
+     "publisher": "American Journal of Gastroenterology",
+     "year": 2017,
+     "url": "https://doi.org/10.1038/ajg.2016.517"
+    },
+    {
+     "id": "S7",
+     "title": "Blood Sciences Reference Range Database v3.20",
+     "publisher": "Leeds Teaching Hospitals NHS Trust",
+     "year": 2026,
+     "url": "https://www.leedsth.nhs.uk/wp-content/uploads/2026/08/BSHC-REC-317b_Blood-Sciences-Reference-Range-Database_v3.20.pdf"
+    },
+    {
+     "id": "S9",
+     "title": "Harmonising Adult Reference Intervals in Australia and New Zealand - the Continuing Story",
+     "publisher": "Clinical Biochemist Reviews",
+     "year": 2016,
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5111244"
+    },
+    {
+     "id": "S12",
+     "title": "Common reference intervals for AST, ALT and GGT in serum: results from an IFCC multicenter study",
+     "publisher": "Clinical Chemistry and Laboratory Medicine",
+     "year": 2010,
+     "url": "https://doi.org/10.1515/cclm.2010.315"
+    },
+    {
+     "id": "S15",
+     "title": "Gamma-Glutamyl Transferase (GGT), test 001958",
+     "publisher": "LabCorp",
+     "year": 2026,
+     "url": "https://www.labcorp.com/tests/001958/gamma-glutamyl-transferase-ggt"
+    },
+    {
+     "id": "S16",
+     "title": "gamma GT - Pathology Handbook",
+     "publisher": "Alfred Health",
+     "year": 2026,
+     "url": "https://pathology.alfred.org.au/handbook/?testid=409"
+    }
+   ],
+   "short": "GGT",
+   "group": "Liver and metabolic",
+   "aliases": [
+    "ggt",
+    "gamma gt",
+    "gamma-gt",
+    "gamma-glutamyl transferase",
+    "gamma glutamyl transferase",
+    "gamma-glutamyltransferase"
+   ],
+   "scale": [
+    0,
+    100
+   ]
+  },
+  {
+   "id": "alp",
+   "name": "Alkaline phosphatase (ALP)",
+   "units": [
+    {
+     "unit": "U/L",
+     "toCanonical": 1
+    },
+    {
+     "unit": "IU/L",
+     "toCanonical": 1
+    },
+    {
+     "unit": "ukat/L",
+     "toCanonical": 60
+    }
+   ],
+   "canonicalUnit": "U/L",
+   "labRange": {
+    "female": [
+     41,
+     116
+    ],
+    "male": [
+     47,
+     123
+    ],
+    "any": [
+     30,
+     130
+    ],
+    "source": "LabCorp adults 21-50 y (female 41-116, male 47-123 IU/L; 51-80 y female 49-135, male 47-123); Leeds NHS adult 30-130 (Pathology Harmony); RCPA/AACB adult 30-110",
+    "url": "https://www.labcorp.com/tests/001107/alkaline-phosphatase"
+   },
+   "origin": "Adult single intervals come from national harmonisation projects: UK Pathology Harmony 2011 (30-130 U/L, used by Leeds NHS) [S7] and the AACB 2014 endorsement (30-110 U/L, confirmed against 1,876 healthy adults) [S9]; paediatric sex- and age-specific ranges come from CALIPER [S7]. ACG says clinicians 'may rely on local lab ULN ranges for alkaline phosphatase and bilirubin' because replicating ALP ranges across labs 'has not been reported as problematic' [S2]. The NHS database notes ALP 'changes quite markedly throughout life with peaks in childhood and puberty (and pregnancy)' [S7].",
+   "sexSpecific": {
+    "exists": true,
+    "female": 135,
+    "male": 123,
+    "what": "LabCorp upper limit at age 51-80 (female limit exceeds male after 50); laboratory table only, no guideline threshold",
+    "source": "[S17]"
+   },
+   "contested": {
+    "band": null,
+    "summary": "No published argument that the adult female ALP limit is set on the wrong population was found in this pass. The sex-relevant facts are that LabCorp's female upper limit rises above the male one after age 50 (135 vs 123 IU/L) while single-interval labs apply one limit to everyone [S17 vs S7, S9], and that pregnancy raises ALP physiologically [S7].",
+    "sources": [
+     "S7",
+     "S9",
+     "S17"
+    ]
+   },
+   "guidanceInBand": "ACG 2017: 'An elevation of alkaline phosphatase should be confirmed with an elevation in GGT'; evaluation branches at 'alkaline phosphatase 1-2x ULN' versus '> 2x ULN', with anti-mitochondrial antibody testing for PBC and MR cholangiography/ERCP with IgG4 for PSC recommended for hepatic ALP elevation [S2].",
+   "confidence": "high",
+   "sources": [
+    {
+     "id": "S2",
+     "title": "ACG Clinical Guideline: Evaluation of Abnormal Liver Chemistries",
+     "publisher": "American Journal of Gastroenterology",
+     "year": 2017,
+     "url": "https://doi.org/10.1038/ajg.2016.517"
+    },
+    {
+     "id": "S7",
+     "title": "Blood Sciences Reference Range Database v3.20",
+     "publisher": "Leeds Teaching Hospitals NHS Trust",
+     "year": 2026,
+     "url": "https://www.leedsth.nhs.uk/wp-content/uploads/2026/08/BSHC-REC-317b_Blood-Sciences-Reference-Range-Database_v3.20.pdf"
+    },
+    {
+     "id": "S9",
+     "title": "Harmonising Adult Reference Intervals in Australia and New Zealand - the Continuing Story",
+     "publisher": "Clinical Biochemist Reviews",
+     "year": 2016,
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5111244"
+    },
+    {
+     "id": "S17",
+     "title": "Alkaline Phosphatase, test 001107",
+     "publisher": "LabCorp",
+     "year": 2026,
+     "url": "https://www.labcorp.com/tests/001107/alkaline-phosphatase"
+    }
+   ],
+   "short": "ALP",
+   "group": "Liver and metabolic",
+   "aliases": [
+    "alp",
+    "alkaline phosphatase",
+    "alk phos"
+   ],
+   "scale": [
+    20,
+    160
+   ]
+  },
+  {
+   "id": "hba1c",
+   "name": "HbA1c (glycated haemoglobin)",
+   "units": [
+    {
+     "unit": "%",
+     "toCanonical": 1
+    },
+    {
+     "unit": "mmol/mol",
+     "toCanonical": 0.09148,
+     "offset": 2.152
+    }
+   ],
+   "canonicalUnit": "%",
+   "labRange": {
+    "female": null,
+    "male": null,
+    "any": [
+     4.8,
+     5.6
+    ],
+    "source": "LabCorp (4.8-5.6%; prediabetes 5.7-6.4%; diabetes >=6.5%); Leeds NHS <42 mmol/mol, diabetes >48 mmol/mol",
+    "url": "https://www.labcorp.com/tests/001453/hemoglobin-a1c"
+   },
+   "origin": "These are diagnostic decision limits, not population reference intervals. ADA Standards of Care 2026 Table 2.1 sets diabetes at 'A1C >=6.5% (>=48 mmol/mol)' and Table 2.2 prediabetes at 'A1C 5.7-6.4% (39-47 mmol/mol)', requiring an NGSP-certified assay standardised to the DCCT [S18]; the NHS uses the WHO 2011 48 mmol/mol limit and a local non-diabetic cut-off of <42 mmol/mol [S7]. The ADA notes 'Black individuals have slightly higher A1C levels (approximately 0.3%)' and that in conditions with altered red cell turnover, pregnancy, some haemoglobin variants, G6PD deficiency and HIV, 'plasma glucose criteria should be used to diagnose diabetes' [S18].",
+   "sexSpecific": {
+    "exists": false,
+    "female": null,
+    "male": null,
+    "what": "No guideline or lab opened sets a sex-specific HbA1c threshold",
+    "source": "[S18]"
+   },
+   "contested": {
+    "band": [
+     6.35,
+     6.5
+    ],
+    "summary": "Holland et al. 2024 (146,907 single-test UK adults, replicated in 938,678 from six laboratories) found women under 50 had mean HbA1c 34.4 vs 36.0 mmol/mol in men (1.6 mmol/mol lower, p<0.0001; 0.9 mmol/mol at 50+), modelled lowering the diagnostic cut-off from 48 to 46 mmol/mol (6.5% to 6.4%) for women under 50, estimated 34,953 additional women in England and Wales would be reclassified, and attributed the gap to 'menstruation and hence shorter erythrocyte survival' (about 4% of circulating blood, ~1.9 mmol/mol) [S21]. The mechanism is inferred and no guideline has adopted a sex-specific cut-off.",
+    "sources": [
+     "S21",
+     "S18"
+    ]
+   },
+   "guidanceInBand": "ADA 2026: prediabetes is 'A1C 5.7-6.4% (39-47 mmol/mol)' and diabetes 'A1C >=6.5% (>=48 mmol/mol)'; in the absence of unequivocal hyperglycaemia a confirmatory test is required [S18]. LabCorp: 'Prediabetes: 5.7% to 6.4%'; patients with prediabetes should be retested yearly [S19].",
+   "confidence": "high",
+   "sources": [
+    {
+     "id": "S7",
+     "title": "Blood Sciences Reference Range Database v3.20",
+     "publisher": "Leeds Teaching Hospitals NHS Trust",
+     "year": 2026,
+     "url": "https://www.leedsth.nhs.uk/wp-content/uploads/2026/08/BSHC-REC-317b_Blood-Sciences-Reference-Range-Database_v3.20.pdf"
+    },
+    {
+     "id": "S18",
+     "title": "2. Diagnosis and Classification of Diabetes: Standards of Care in Diabetes-2026",
+     "publisher": "Diabetes Care (American Diabetes Association)",
+     "year": 2026,
+     "url": "https://doi.org/10.2337/dc26-S002"
+    },
+    {
+     "id": "S19",
+     "title": "Hemoglobin A1c, test 001453",
+     "publisher": "LabCorp",
+     "year": 2026,
+     "url": "https://www.labcorp.com/tests/001453/hemoglobin-a1c"
+    },
+    {
+     "id": "S21",
+     "title": "Is the Current Cut Point for Glycated Haemoglobin (HbA1c) Correct for Diagnosing Diabetes Mellitus in Premenopausal Women? Evidence to Inform Discussion",
+     "publisher": "Diabetes Therapy (Holland et al.)",
+     "year": 2024,
+     "url": "https://doi.org/10.1007/s13300-023-01482-6"
+    }
+   ],
+   "short": "HbA1c",
+   "group": "Liver and metabolic",
+   "aliases": [
+    "hba1c",
+    "a1c",
+    "glycated haemoglobin",
+    "glycated hemoglobin",
+    "haemoglobin a1c",
+    "hemoglobin a1c"
+   ],
+   "scale": [
+    4,
+    9
+   ]
+  },
+  {
+   "id": "glucose_fasting",
+   "name": "Fasting plasma glucose",
+   "units": [
+    {
+     "unit": "mg/dL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "mmol/L",
+     "toCanonical": 18.0
+    }
+   ],
+   "canonicalUnit": "mg/dL",
+   "labRange": {
+    "female": null,
+    "male": null,
+    "any": [
+     70,
+     99
+    ],
+    "source": "LabCorp (70-99 mg/dL); Leeds NHS fasting 3.5-6.0 mmol/L",
+    "url": "https://www.labcorp.com/tests/001032/glucose"
+   },
+   "origin": "Decision limits from the ADA: Table 2.1 diabetes 'FPG >=126 mg/dL (>=7.0 mmol/L)', Table 2.2 prediabetes 'FPG 100 mg/dL (5.6 mmol/L) to 125 mg/dL (6.9 mmol/L) (IFG)', with 'Fasting is defined as no caloric intake for at least 8 h' [S18]. The NHS uses WHO 2006: impaired fasting glucose 6.1-6.9 mmol/L, diabetes >=7.0 mmol/L [S7]. LabCorp notes fasting glucose 'tends to be higher in the morning than in the afternoon' [S20].",
+   "sexSpecific": {
+    "exists": false,
+    "female": null,
+    "male": null,
+    "what": "No sex-specific fasting glucose threshold in ADA 2026, WHO-based NHS ranges, or LabCorp",
+    "source": "[S18]"
+   },
+   "contested": {
+    "band": null,
+    "summary": "Evidence on sex differences in fasting glucose distributions was not researched in this pass (unverified). The only verified sex-related point is the ADA's instruction that in pregnancy and in conditions altering red cell turnover, plasma glucose rather than A1C should be used for diagnosis [S18].",
+    "sources": [
+     "S18"
+    ]
+   },
+   "guidanceInBand": "ADA 2026: 'FPG 100 mg/dL (5.6 mmol/L) to 125 mg/dL (6.9 mmol/L) (IFG)' is prediabetes; diabetes requires 'FPG >=126 mg/dL (>=7.0 mmol/L)' with confirmation absent unequivocal hyperglycaemia [S18].",
+   "confidence": "high",
+   "sources": [
+    {
+     "id": "S7",
+     "title": "Blood Sciences Reference Range Database v3.20",
+     "publisher": "Leeds Teaching Hospitals NHS Trust",
+     "year": 2026,
+     "url": "https://www.leedsth.nhs.uk/wp-content/uploads/2026/08/BSHC-REC-317b_Blood-Sciences-Reference-Range-Database_v3.20.pdf"
+    },
+    {
+     "id": "S18",
+     "title": "2. Diagnosis and Classification of Diabetes: Standards of Care in Diabetes-2026",
+     "publisher": "Diabetes Care (American Diabetes Association)",
+     "year": 2026,
+     "url": "https://doi.org/10.2337/dc26-S002"
+    },
+    {
+     "id": "S20",
+     "title": "Glucose, test 001032",
+     "publisher": "LabCorp",
+     "year": 2026,
+     "url": "https://www.labcorp.com/tests/001032/glucose"
+    }
+   ],
+   "short": "Fasting glucose",
+   "group": "Liver and metabolic",
+   "aliases": [
+    "fasting glucose",
+    "glucose",
+    "fasting plasma glucose",
+    "fpg",
+    "blood glucose"
+   ],
+   "scale": [
+    50,
+    160
+   ]
+  },
+  {
+   "id": "total_cholesterol",
+   "name": "Total cholesterol",
+   "units": [
+    {
+     "unit": "mg/dL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "mmol/L",
+     "toCanonical": 38.67
+    }
+   ],
+   "canonicalUnit": "mg/dL",
+   "labRange": {
+    "female": null,
+    "male": null,
+    "any": [
+     100,
+     199
+    ],
+    "source": "LabCorp (>19 y: Acceptable <200 (or 100-199); Borderline 200-239; High >=240)",
+    "url": "https://www.labcorp.com/tests/001065/cholesterol-total"
+   },
+   "origin": "Decision limits reproduced from NCEP ATP III (2001) Table 2: total cholesterol '<200 Desirable; 200-239 Borderline high; >=240 High' [S22]. ATP III is an expert-panel classification built on LDL as the primary target; the NHS trust database prints no range and refers to risk calculators [S7].",
+   "sexSpecific": {
+    "exists": false,
+    "female": null,
+    "male": null,
+    "what": "No sex-specific total cholesterol threshold in ATP III, ESC/EAS 2019 or the labs opened",
+    "source": "[S22]"
+   },
+   "contested": {
+    "band": [
+     157,
+     200
+    ],
+    "summary": "BioCycle (259 women aged 18-44, up to 16 visits over two cycles) found median total cholesterol varied from 166 mg/dL mid-follicular to 157 late luteal, with a within-woman mean change of 19% (27.7 mg/dL) over the cycle; 14.3% of women were >=200 mg/dL at mid-follicular versus 7.9% late luteal, and 19.7% exceeded 200 at least once but only 5% at every visit [S24]. The authors say measurements 'should be appropriately timed to menstrual cycle phase' [S24]; no guideline opened addresses this.",
+    "sources": [
+     "S24",
+     "S25"
+    ]
+   },
+   "guidanceInBand": "ATP III: '200-239 Borderline high'; if non-fasting total cholesterol is >=200 mg/dL 'a followup lipoprotein profile is needed for appropriate management based on LDL' [S22]. No guideline text on cycle timing was found; the BioCycle authors recommend standardising the timing of lipid measurement [S24].",
+   "confidence": "high",
+   "sources": [
+    {
+     "id": "S22",
+     "title": "ATP III Executive Summary (NIH Publication 01-3670)",
+     "publisher": "National Cholesterol Education Program, NHLBI",
+     "year": 2001,
+     "url": "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf"
+    },
+    {
+     "id": "S24",
+     "title": "A Longitudinal Study of Serum Lipoproteins in Relation to Endogenous Reproductive Hormones during the Menstrual Cycle: Findings from the BioCycle Study",
+     "publisher": "Journal of Clinical Endocrinology and Metabolism (Mumford et al.)",
+     "year": 2010,
+     "url": "https://doi.org/10.1210/jc.2010-0109"
+    },
+    {
+     "id": "S25",
+     "title": "Women's Cholesterol Levels Vary with Phase of Menstrual Cycle",
+     "publisher": "NICHD news release",
+     "year": 2010,
+     "url": "https://www.nichd.nih.gov/newsroom/releases/081010-womens-cholesterol-levels"
+    },
+    {
+     "id": "S26",
+     "title": "Cholesterol, Total, test 001065",
+     "publisher": "LabCorp",
+     "year": 2026,
+     "url": "https://www.labcorp.com/tests/001065/cholesterol-total"
+    },
+    {
+     "id": "S7",
+     "title": "Blood Sciences Reference Range Database v3.20",
+     "publisher": "Leeds Teaching Hospitals NHS Trust",
+     "year": 2026,
+     "url": "https://www.leedsth.nhs.uk/wp-content/uploads/2026/08/BSHC-REC-317b_Blood-Sciences-Reference-Range-Database_v3.20.pdf"
+    }
+   ],
+   "short": "Total cholesterol",
+   "group": "Lipids",
+   "aliases": [
+    "total cholesterol",
+    "cholesterol",
+    "chol",
+    "tc"
+   ],
+   "scale": [
+    100,
+    320
+   ]
+  },
+  {
+   "id": "ldl",
+   "name": "LDL cholesterol",
+   "units": [
+    {
+     "unit": "mg/dL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "mmol/L",
+     "toCanonical": 38.67
+    }
+   ],
+   "canonicalUnit": "mg/dL",
+   "labRange": {
+    "female": null,
+    "male": null,
+    "any": [
+     0,
+     99
+    ],
+    "source": "LabCorp LDL direct (>19 y: 0-99, same for male and female)",
+    "url": "https://www.labcorp.com/tests/120295/ldl-cholesterol-direct"
+   },
+   "origin": "ATP III Table 2: LDL '<100 Optimal; 100-129 Near optimal/above optimal; 130-159 Borderline high; 160-189 High; >=190 Very high', with treatment goals set by risk category [S22]. ESC/EAS 2019 replaces categories with risk-based LDL-C goals [S31]. The NHS trust calculates LDL as 'Total chol - HDL - (trigs/2.29)' with no range [S7].",
+   "sexSpecific": {
+    "exists": false,
+    "female": null,
+    "male": null,
+    "what": "No sex-specific LDL threshold in ATP III, ESC/EAS 2019 or the labs opened; the 2018 AHA/ACC guideline adds women-specific risk enhancers (premature menopause, pre-eclampsia) rather than lipid thresholds, per a 2020 Circulation review [S33]",
+    "source": "[S22]"
+   },
+   "contested": {
+    "band": [
+     96,
+     130
+    ],
+    "summary": "BioCycle: median LDL 102 mg/dL mid-follicular versus 96 late luteal; 17.8% of women were >=130 mg/dL at mid-follicular versus 10.5% late luteal; 'Total and LDL cholesterol were lower during the luteal phase as compared with the follicular phase' [S24]. ESC/EAS notes 'women have not been adequately represented in statin trials' [S31].",
+    "sources": [
+     "S24",
+     "S31",
+     "S33"
+    ]
+   },
+   "guidanceInBand": "ATP III: '100-129 Near optimal/above optimal', '130-159 Borderline high'; for 0-1 risk factors the LDL goal is <160 mg/dL and lifestyle change starts at >=160 [S22]. ESC/EAS 2019 ties the LDL-C goal to estimated risk and recommends statins 'for primary prevention in high-risk women' with the same goals as in men [S31].",
+   "confidence": "high",
+   "sources": [
+    {
+     "id": "S22",
+     "title": "ATP III Executive Summary (NIH Publication 01-3670)",
+     "publisher": "National Cholesterol Education Program, NHLBI",
+     "year": 2001,
+     "url": "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf"
+    },
+    {
+     "id": "S24",
+     "title": "A Longitudinal Study of Serum Lipoproteins ... Findings from the BioCycle Study",
+     "publisher": "Journal of Clinical Endocrinology and Metabolism (Mumford et al.)",
+     "year": 2010,
+     "url": "https://doi.org/10.1210/jc.2010-0109"
+    },
+    {
+     "id": "S28",
+     "title": "LDL Cholesterol, Direct, test 120295",
+     "publisher": "LabCorp",
+     "year": 2026,
+     "url": "https://www.labcorp.com/tests/120295/ldl-cholesterol-direct"
+    },
+    {
+     "id": "S31",
+     "title": "2019 ESC/EAS Guidelines for the management of dyslipidaemias",
+     "publisher": "European Heart Journal",
+     "year": 2020,
+     "url": "https://academic.oup.com/eurheartj/article/41/1/111/5556353"
+    },
+    {
+     "id": "S33",
+     "title": "The Use of Sex-Specific Factors in the Assessment of Women's Cardiovascular Risk",
+     "publisher": "Circulation (Agarwala et al.)",
+     "year": 2020,
+     "url": "https://doi.org/10.1161/CIRCULATIONAHA.119.043429"
+    },
+    {
+     "id": "S7",
+     "title": "Blood Sciences Reference Range Database v3.20",
+     "publisher": "Leeds Teaching Hospitals NHS Trust",
+     "year": 2026,
+     "url": "https://www.leedsth.nhs.uk/wp-content/uploads/2026/08/BSHC-REC-317b_Blood-Sciences-Reference-Range-Database_v3.20.pdf"
+    }
+   ],
+   "short": "LDL cholesterol",
+   "group": "Lipids",
+   "aliases": [
+    "ldl",
+    "ldl cholesterol",
+    "ldl-c",
+    "ldl c"
+   ],
+   "scale": [
+    30,
+    220
+   ]
+  },
+  {
+   "id": "hdl",
+   "name": "HDL cholesterol",
+   "units": [
+    {
+     "unit": "mg/dL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "mmol/L",
+     "toCanonical": 38.67
+    }
+   ],
+   "canonicalUnit": "mg/dL",
+   "labRange": {
+    "female": null,
+    "male": null,
+    "any": [
+     40,
+     null
+    ],
+    "source": "LabCorp (>39 mg/dL, one interval for all); UW Medicine prints Male >=40, Female >=50",
+    "url": "https://www.labcorp.com/tests/001925/high-density-lipoprotein-cholesterol-hdl-c"
+   },
+   "origin": "NCEP ATP III (2001) raised 'categorical low HDL cholesterol from <35 mg/dL to <40 mg/dL because the latter is a better measure of a depressed HDL' and set it 'both in men and women' [S22, S23]. The panel explained that women 'typically have higher HDL cholesterol levels than men' so <40 catches 'approximately one-third of men and about one-fifth of women', and that 'Setting a different cutpoint for categorical low HDL cholesterol for men and women was rejected because it would make many women who are otherwise at low risk eligible for LDL-lowering drugs'; instead '<50 mg/dL' was made 'a marginal risk factor in women' used only in the metabolic syndrome definition [S23]. LabCorp's '>39' reproduces the ATP III categorical value for everyone [S27].",
+   "sexSpecific": {
+    "exists": true,
+    "female": 50,
+    "male": 40,
+    "what": "Low HDL-C criterion for the metabolic syndrome (ATP III Table 8: Men <40 mg/dL, Women <50 mg/dL; three of five criteria make the diagnosis)",
+    "source": "[S22]"
+   },
+   "contested": {
+    "band": [
+     40,
+     50
+    ],
+    "summary": "ATP III itself records that the female cut-point was a policy compromise: <50 mg/dL was 'rejected' as a categorical risk factor to avoid making 'many women who are otherwise at low risk eligible for LDL-lowering drugs', and kept only as a 'marginal risk factor' in the metabolic syndrome criteria [S23]. Labs then print one number (LabCorp >39 for all [S27]; UW Female >=50 [S30]), so a woman at 45 mg/dL is normal at one lab and low at another. BioCycle shows HDL also moves with the cycle: median 48 mg/dL at menses to 52 at ovulation ('HDL levels were highest around ovulation') [S24]. Current ESC/EAS 2019 sets no HDL goal: 'To date, no specific goals for HDL-C or TG levels have been determined in clinical trials' and HDL-raising therapies 'do not reduce the risk of ASCVD' [S31]; the 2018 AHA/ACC guideline's women-specific additions are risk enhancers (premature menopause, pre-eclampsia), not an HDL threshold, per Agarwala et al. 2020 [S33] (guideline full text not opened).",
+    "sources": [
+     "S22",
+     "S23",
+     "S24",
+     "S27",
+     "S30",
+     "S31",
+     "S33"
+    ]
+   },
+   "guidanceInBand": "ATP III: not a counted risk factor ('Low HDL cholesterol (<40 mg/dL)') [S22], but 'for women, HDL cholesterol <50 mg/dL counts as one indicator in the diagnosis of the metabolic syndrome', 'a marginal risk factor in women, which will mandate more intensive lifestyle therapies (weight reduction and increased physical activity)' [S23]; metabolic syndrome is diagnosed 'when three or more of the risk determinants shown in Table 8 are present' [S22]. ESC/EAS 2019: no HDL-C goal [S31].",
+   "confidence": "high",
+   "sources": [
+    {
+     "id": "S22",
+     "title": "ATP III Executive Summary (NIH Publication 01-3670)",
+     "publisher": "National Cholesterol Education Program, NHLBI",
+     "year": 2001,
+     "url": "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf"
+    },
+    {
+     "id": "S23",
+     "title": "ATP III Full Report",
+     "publisher": "National Cholesterol Education Program, NHLBI",
+     "year": 2002,
+     "url": "https://www.nhlbi.nih.gov/files/docs/resources/heart/atp-3-cholesterol-full-report.pdf"
+    },
+    {
+     "id": "S24",
+     "title": "A Longitudinal Study of Serum Lipoproteins ... Findings from the BioCycle Study",
+     "publisher": "Journal of Clinical Endocrinology and Metabolism (Mumford et al.)",
+     "year": 2010,
+     "url": "https://doi.org/10.1210/jc.2010-0109"
+    },
+    {
+     "id": "S27",
+     "title": "High-density Lipoprotein Cholesterol (HDL-C), test 001925",
+     "publisher": "LabCorp",
+     "year": 2026,
+     "url": "https://www.labcorp.com/tests/001925/high-density-lipoprotein-cholesterol-hdl-c"
+    },
+    {
+     "id": "S30",
+     "title": "HDL Cholesterol",
+     "publisher": "University of Washington Medicine Laboratory Medicine",
+     "year": 2026,
+     "url": "https://testguide.labmed.uw.edu/public/view/HDL"
+    },
+    {
+     "id": "S31",
+     "title": "2019 ESC/EAS Guidelines for the management of dyslipidaemias",
+     "publisher": "European Heart Journal",
+     "year": 2020,
+     "url": "https://academic.oup.com/eurheartj/article/41/1/111/5556353"
+    },
+    {
+     "id": "S32",
+     "title": "2018 AHA/ACC Multisociety Guideline on the Management of Blood Cholesterol (record only; full text not opened)",
+     "publisher": "Journal of the American College of Cardiology",
+     "year": 2019,
+     "url": "https://doi.org/10.1016/j.jacc.2018.11.003"
+    },
+    {
+     "id": "S33",
+     "title": "The Use of Sex-Specific Factors in the Assessment of Women's Cardiovascular Risk",
+     "publisher": "Circulation (Agarwala et al.)",
+     "year": 2020,
+     "url": "https://doi.org/10.1161/CIRCULATIONAHA.119.043429"
+    },
+    {
+     "id": "S34",
+     "title": "Diagnosis and management of the metabolic syndrome: AHA/NHLBI Scientific Statement (record only; full text not opened)",
+     "publisher": "Circulation (Grundy et al.)",
+     "year": 2005,
+     "url": "https://doi.org/10.1161/CIRCULATIONAHA.105.169404"
+    },
+    {
+     "id": "S35",
+     "title": "Harmonizing the metabolic syndrome: a joint interim statement (abstract only)",
+     "publisher": "Circulation (Alberti et al.)",
+     "year": 2009,
+     "url": "https://doi.org/10.1161/CIRCULATIONAHA.109.192644"
+    }
+   ],
+   "short": "HDL cholesterol",
+   "group": "Lipids",
+   "aliases": [
+    "hdl",
+    "hdl cholesterol",
+    "hdl-c",
+    "hdl c"
+   ],
+   "scale": [
+    20,
+    110
+   ]
+  },
+  {
+   "id": "triglycerides",
+   "name": "Triglycerides",
+   "units": [
+    {
+     "unit": "mg/dL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "mmol/L",
+     "toCanonical": 88.57
+    }
+   ],
+   "canonicalUnit": "mg/dL",
+   "labRange": {
+    "female": null,
+    "male": null,
+    "any": [
+     0,
+     149
+    ],
+    "source": "LabCorp (Normal <150; Borderline-high 150-199; High 200-499; Very high >500 mg/dL); Leeds NHS fasting <2.3 mmol/L",
+    "url": "https://www.labcorp.com/tests/001172/triglycerides"
+   },
+   "origin": "ATP III lowered the triglyceride categories from ATP II: 'Normal <150 mg/dL; Borderline-high 150-199; High 200-499; Very high >=500' (ATP II: <200, 200-399, 400-1000, >1000) 'to give more attention to moderate elevations' [S22, S23]; >=150 mg/dL is also one of the five metabolic syndrome criteria [S22]. The NHS trust's fasting <2.3 mmol/L comes from 1987 European Atherosclerosis Society recommendations [S7].",
+   "sexSpecific": {
+    "exists": false,
+    "female": null,
+    "male": null,
+    "what": "No sex-specific triglyceride threshold in ATP III, ESC/EAS 2019 or the labs opened",
+    "source": "[S22]"
+   },
+   "contested": {
+    "band": null,
+    "summary": "BioCycle: median triglycerides 56 mg/dL mid-follicular versus 49 late luteal, lowest just before menstruation [S24, S25]; the within-woman magnitude is small relative to the 150 mg/dL cut-off. ATP III notes that when triglycerides exceed 150 mg/dL, HDL 'frequently are <40 mg/dL in men (or <50 mg/dL in women)' [S23]. No evidence that the female threshold is mis-set was found.",
+    "sources": [
+     "S23",
+     "S24"
+    ]
+   },
+   "guidanceInBand": "ATP III: '150-199 Borderline-high'; the panel 'Recommends treatment beyond LDL lowering for persons with triglycerides >=200 mg/dL' and for the metabolic syndrome stresses 'weight reduction and increased physical activity' [S22]. ESC/EAS 2019: no specific TG goal has been determined in clinical trials [S31].",
+   "confidence": "high",
+   "sources": [
+    {
+     "id": "S7",
+     "title": "Blood Sciences Reference Range Database v3.20",
+     "publisher": "Leeds Teaching Hospitals NHS Trust",
+     "year": 2026,
+     "url": "https://www.leedsth.nhs.uk/wp-content/uploads/2026/08/BSHC-REC-317b_Blood-Sciences-Reference-Range-Database_v3.20.pdf"
+    },
+    {
+     "id": "S22",
+     "title": "ATP III Executive Summary (NIH Publication 01-3670)",
+     "publisher": "National Cholesterol Education Program, NHLBI",
+     "year": 2001,
+     "url": "https://www.nhlbi.nih.gov/files/docs/guidelines/atp3xsum.pdf"
+    },
+    {
+     "id": "S23",
+     "title": "ATP III Full Report",
+     "publisher": "National Cholesterol Education Program, NHLBI",
+     "year": 2002,
+     "url": "https://www.nhlbi.nih.gov/files/docs/resources/heart/atp-3-cholesterol-full-report.pdf"
+    },
+    {
+     "id": "S24",
+     "title": "A Longitudinal Study of Serum Lipoproteins ... Findings from the BioCycle Study",
+     "publisher": "Journal of Clinical Endocrinology and Metabolism (Mumford et al.)",
+     "year": 2010,
+     "url": "https://doi.org/10.1210/jc.2010-0109"
+    },
+    {
+     "id": "S29",
+     "title": "Triglycerides, test 001172",
+     "publisher": "LabCorp",
+     "year": 2026,
+     "url": "https://www.labcorp.com/tests/001172/triglycerides"
+    },
+    {
+     "id": "S31",
+     "title": "2019 ESC/EAS Guidelines for the management of dyslipidaemias",
+     "publisher": "European Heart Journal",
+     "year": 2020,
+     "url": "https://academic.oup.com/eurheartj/article/41/1/111/5556353"
+    },
+    {
+     "id": "S25",
+     "title": "Women's Cholesterol Levels Vary with Phase of Menstrual Cycle",
+     "publisher": "NICHD news release",
+     "year": 2010,
+     "url": "https://www.nichd.nih.gov/newsroom/releases/081010-womens-cholesterol-levels"
+    }
+   ],
+   "short": "Triglycerides",
+   "group": "Lipids",
+   "aliases": [
+    "triglycerides",
+    "triglyceride",
+    "tg",
+    "trig",
+    "trigs"
+   ],
+   "scale": [
+    30,
+    400
+   ]
+  },
+  {
+   "id": "tsh",
+   "name": "TSH (thyroid-stimulating hormone)",
+   "units": [
+    {
+     "unit": "mIU/L",
+     "toCanonical": 1
+    },
+    {
+     "unit": "mU/L",
+     "toCanonical": 1
+    },
+    {
+     "unit": "µIU/mL",
+     "toCanonical": 1
+    }
+   ],
+   "canonicalUnit": "mIU/L",
+   "labRange": {
+    "female": null,
+    "male": null,
+    "any": [
+     0.45,
+     4.5
+    ],
+    "source": "LabCorp 004259 (>10 y, ECLIA); ARUP 0070145 gives 0.27-4.20 for 20+",
+    "url": "https://www.labcorp.com/tests/004259/thyroid-stimulating-hormone-tsh"
+   },
+   "origin": "The 0.4-4.5 family of ranges comes from NHANES III (1988-1994): 17,353 Americans aged 12+, of whom 16,533 were 'disease-free' and 13,344 formed a 'reference population' after excluding pregnancy, hormone use, positive thyroid antibodies and biochemical dysfunction [S3]. The disease-free upper limit was 4.5 mIU/L and the reference-population range 0.45-4.12 mIU/L, as stated by the AACE/ATA 2012 guideline [S4]. The range was never derived separately for women, although TSH was higher and antibody positivity more common in women [S3].",
+   "sexSpecific": {
+    "exists": true,
+    "female": null,
+    "male": null,
+    "what": "Pregnancy only: ATA 2017 upper reference limit of ~4.0 mU/L (about 0.5 below the non-pregnant limit) from weeks 7-12 when no local trimester-specific range exists; no sex-specific range for non-pregnant adults in any lab or guideline opened. Age: 97.5th centile 3.56 at 20-29 y vs 7.49 at 80+ y.",
+    "source": "[S6], [S8]"
+   },
+   "contested": {
+    "band": [
+     2.5,
+     4.5
+    ],
+    "summary": "The upper limit 'has not been universally accepted'; proposals of 2.5 or 3.0 mIU/L rest on the right-skew of the reference distribution (values 3.1-4.12) and a median near 1.5 [S4]; AACE's 2003 '0.3-3.0' proposal is verified only from secondary sources [S10]. Opponents note 85% of the NHANES III reference group had TSH <2.5 and that lowering the limit would add 'more than 10 million additional diagnoses' a year [S4, S5]. A 2019 BMJ guideline (21 trials, 2,192 participants) strongly recommends against treating subclinical hypothyroidism except in pregnancy planning, TSH >20, severe symptoms or young adults [S12].",
+    "sources": [
+     "S4",
+     "S5",
+     "S8",
+     "S9",
+     "S10",
+     "S12"
+    ]
+   },
+   "guidanceInBand": "AACE/ATA 2012 Rec 16: 'Treatment based on individual factors for patients with TSH levels between the upper limit of a given laboratory's reference range and 10 mIU/L should be considered particularly if patients have symptoms suggestive of hypothyroidism, positive TPOAb or evidence of atherosclerotic cardiovascular disease' [S4]; for 2.5-4.5 'there are virtually no clinical outcome data to support treating' [S4]. Pregnancy (ATA 2017 Rec 29): levothyroxine 'may be considered' for TPOAb-positive women with TSH >2.5 and below the pregnancy range, and is 'not recommended' for TPOAb-negative women with TSH within the pregnancy range 'or < 4.0 mU/L if unavailable' [S6].",
+   "confidence": "high",
+   "sources": [
+    {
+     "id": "S1",
+     "title": "Thyroid-Stimulating Hormone (TSH), test 004259",
+     "publisher": "LabCorp",
+     "year": 2026,
+     "url": "https://www.labcorp.com/tests/004259/thyroid-stimulating-hormone-tsh"
+    },
+    {
+     "id": "S2",
+     "title": "Thyroid Stimulating Hormone, test 0070145",
+     "publisher": "ARUP Laboratories",
+     "year": 2026,
+     "url": "https://ltd.aruplab.com/Tests/Pub/0070145"
+    },
+    {
+     "id": "S3",
+     "title": "Serum TSH, T4, and thyroid antibodies in the United States population (1988 to 1994): NHANES III",
+     "publisher": "Hollowell JG et al., J Clin Endocrinol Metab",
+     "year": 2002,
+     "url": "https://doi.org/10.1210/jcem.87.2.8182"
+    },
+    {
+     "id": "S4",
+     "title": "Clinical practice guidelines for hypothyroidism in adults: cosponsored by AACE and ATA",
+     "publisher": "Garber JR et al., Endocr Pract / Thyroid",
+     "year": 2012,
+     "url": "https://doi.org/10.4158/EP12280.GL"
+    },
+    {
+     "id": "S5",
+     "title": "The thyrotropin reference range should remain unchanged",
+     "publisher": "Surks MI, Goswami G, Daniels GH, J Clin Endocrinol Metab",
+     "year": 2005,
+     "url": "https://doi.org/10.1210/jc.2005-0170"
+    },
+    {
+     "id": "S6",
+     "title": "2017 Guidelines of the ATA for the Diagnosis and Management of Thyroid Disease during Pregnancy and the Postpartum",
+     "publisher": "Alexander EK et al., Thyroid",
+     "year": 2017,
+     "url": "https://doi.org/10.1089/thy.2016.0457"
+    },
+    {
+     "id": "S7",
+     "title": "Clinical Thyroidology for the Public: 2017 pregnancy guideline summary",
+     "publisher": "American Thyroid Association",
+     "year": 2017,
+     "url": "https://www.thyroid.org/?p=35841"
+    },
+    {
+     "id": "S8",
+     "title": "Age-specific distribution of serum thyrotropin and antithyroid antibodies in the US population",
+     "publisher": "Surks MI, Hollowell JG, J Clin Endocrinol Metab",
+     "year": 2007,
+     "url": "https://doi.org/10.1210/jc.2007-1499"
+    },
+    {
+     "id": "S9",
+     "title": "The evidence for a narrower thyrotropin reference range is compelling",
+     "publisher": "Wartofsky L, Dickey RA, J Clin Endocrinol Metab",
+     "year": 2005,
+     "url": "https://doi.org/10.1210/jc.2005-0455"
+    },
+    {
+     "id": "S10",
+     "title": "TSH Range Is Not Universally Applicable (secondary source for AACE 2003 0.3-3.0)",
+     "publisher": "The Hospitalist",
+     "year": 2019,
+     "url": "https://community.the-hospitalist.org/content/tsh-range-not-universally-applicable"
+    },
+    {
+     "id": "S11",
+     "title": "AACE medical guidelines for the evaluation and treatment of hyperthyroidism and hypothyroidism",
+     "publisher": "Baskin HJ et al., Endocr Pract",
+     "year": 2002,
+     "url": "https://doi.org/10.4158/1934-2403-8.6.457"
+    },
+    {
+     "id": "S12",
+     "title": "Thyroid hormones treatment for subclinical hypothyroidism: a clinical practice guideline",
+     "publisher": "Bekkering GE et al., BMJ",
+     "year": 2019,
+     "url": "https://doi.org/10.1136/bmj.l2006"
+    },
+    {
+     "id": "S13",
+     "title": "2013 ETA Guideline: Management of Subclinical Hypothyroidism",
+     "publisher": "Pearce SH et al., Eur Thyroid J",
+     "year": 2013,
+     "url": "https://doi.org/10.1159/000356507"
+    }
+   ],
+   "short": "TSH",
+   "group": "Thyroid and hormones",
+   "aliases": [
+    "tsh",
+    "thyroid stimulating hormone",
+    "thyroid-stimulating hormone",
+    "thyrotropin"
+   ],
+   "scale": [
+    0,
+    8
+   ]
+  },
+  {
+   "id": "ft4",
+   "name": "Free T4 (free thyroxine)",
+   "units": [
+    {
+     "unit": "ng/dL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "pmol/L",
+     "toCanonical": 0.0777
+    }
+   ],
+   "canonicalUnit": "ng/dL",
+   "labRange": {
+    "female": null,
+    "male": null,
+    "any": [
+     0.82,
+     1.77
+    ],
+    "source": "LabCorp 001974 (>19 y, ECLIA, Roche)",
+    "url": "https://www.labcorp.com/tests/001974/thyroxine-t-free-direct"
+   },
+   "origin": "Manufacturer (Roche Elecsys) reference-interval study as cited by the lab; population not described on the lab page [S1]. Unverified beyond that.",
+   "sexSpecific": {
+    "exists": true,
+    "female": null,
+    "male": null,
+    "what": "Pregnancy only: ATA 2017 Rec 2 requires 'assay method-specific and trimester-specific pregnancy reference ranges' because analog free T4 immunoassays are 'influenced by pregnancy' [S3]. No sex-specific non-pregnant range.",
+    "source": "[S3]"
+   },
+   "contested": {
+    "band": null,
+    "summary": "Indirect analog free T4 immunoassays vary 'significantly by manufacturer' and are affected by pregnancy; the reference method (equilibrium dialysis LC-MS/MS) is 'not widely available' [S3].",
+    "sources": [
+     "S3"
+    ]
+   },
+   "guidanceInBand": "ATA 2017 Rec 30: 'Isolated hypothyroxinemia should not be routinely treated in pregnancy. (Weak recommendation, Low quality evidence)' [S3].",
+   "confidence": "medium",
+   "sources": [
+    {
+     "id": "S1",
+     "title": "Thyroxine (T4) Free, Direct, test 001974",
+     "publisher": "LabCorp",
+     "year": 2026,
+     "url": "https://www.labcorp.com/tests/001974/thyroxine-t-free-direct"
+    },
+    {
+     "id": "S3",
+     "title": "2017 ATA pregnancy guideline",
+     "publisher": "Alexander EK et al., Thyroid",
+     "year": 2017,
+     "url": "https://doi.org/10.1089/thy.2016.0457"
+    }
+   ],
+   "short": "Free T4",
+   "group": "Thyroid and hormones",
+   "aliases": [
+    "free t4",
+    "ft4",
+    "free thyroxine",
+    "t4 free",
+    "thyroxine"
+   ],
+   "scale": [
+    0.4,
+    2.4
+   ]
+  },
+  {
+   "id": "vitamin_d",
+   "name": "Vitamin D (25-hydroxyvitamin D)",
+   "units": [
+    {
+     "unit": "ng/mL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "nmol/L",
+     "toCanonical": 0.4
+    }
+   ],
+   "canonicalUnit": "ng/mL",
+   "labRange": {
+    "female": null,
+    "male": null,
+    "any": [
+     30,
+     80
+    ],
+    "source": "ARUP 2002348 'Optimum level 30-80 ng/mL' (deficiency <20; insufficiency 20-29), LC-MS/MS, adults 18+",
+    "url": "https://ltd.aruplab.com/Tests/Pub/2002348"
+   },
+   "origin": "The lab categories reproduce the Endocrine Society 2011 scheme: deficiency 'below 20 ng/ml', insufficiency '21-29 ng/ml', sufficiency '30-100 ng/ml' [S3]. The IOM 2011 DRI report, from the same bone data, set 16 ng/mL (40 nmol/L) as the average requirement and 20 ng/mL (50 nmol/L) as the level at which 'Practically all persons are sufficient' [S2]. Neither threshold was derived by sex; the IOM's vitamin D EAR/RDA is the same for men and women [S2].",
+   "sexSpecific": {
+    "exists": false,
+    "female": null,
+    "male": null,
+    "what": "No sex-specific 25(OH)D threshold in IOM 2011, Endocrine Society 2011 or 2024, USPSTF 2021 or SACN 2016. Endocrine Society 2024 suggests empiric supplementation in pregnancy without a threshold [S4].",
+    "source": "[S2], [S4]"
+   },
+   "contested": {
+    "band": [
+     20,
+     30
+    ],
+    "summary": "IOM committee members responded in 2012 to 'aspects of The Endocrine Society guideline that are not well supported' [S6]; in 2024 the Endocrine Society 'no longer endorses the target 25(OH)D level of 30 ng/mL (75 nmol/L)' and no longer endorses 'specific 25(OH)D levels to define vitamin D sufficiency' [S4]. The IOM's 20 ng/mL is a population coverage value (97.5% of people) not an individual cut-off, with the average requirement at 16 ng/mL [S2]. USPSTF 2021: 'no one serum vitamin D level cutpoint defines deficiency' and evidence for screening is insufficient [S9]. UK SACN uses 25 nmol/L (10 ng/mL) as a population protective level and says it 'is not a clinical threshold diagnostic of the disease' [S7].",
+    "sources": [
+     "S2",
+     "S4",
+     "S6",
+     "S7",
+     "S9"
+    ]
+   },
+   "guidanceInBand": "Endocrine Society 2011: 'vitamin D insufficiency as a 25(OH)D of 21-29 ng/ml' [S3]. IOM 2011: 'Practically all persons are sufficient at serum 25OHD levels of at least 50 nmol/L (20 ng/mL)' [S2]. Endocrine Society 2024: 'In healthy adults, we suggest against routine screening for 25(OH)D levels' and 'suggests against empiric vitamin D supplementation above the current DRI' under 75, while suggesting empiric supplementation at 75+ and 'during pregnancy' [S4].",
+   "confidence": "high",
+   "sources": [
+    {
+     "id": "S1",
+     "title": "25-Hydroxyvitamin D2 and D3 by Tandem Mass Spectrometry, test 2002348",
+     "publisher": "ARUP Laboratories",
+     "year": 2026,
+     "url": "https://ltd.aruplab.com/Tests/Pub/2002348"
+    },
+    {
+     "id": "S2",
+     "title": "Dietary Reference Intakes for Calcium and Vitamin D (Summary)",
+     "publisher": "Institute of Medicine / National Academies Press",
+     "year": 2011,
+     "url": "https://www.nationalacademies.org/read/13050/chapter/2"
+    },
+    {
+     "id": "S2b",
+     "title": "The 2011 report on dietary reference intakes for calcium and vitamin D from the IOM: what clinicians need to know",
+     "publisher": "Ross AC et al., J Clin Endocrinol Metab",
+     "year": 2011,
+     "url": "https://doi.org/10.1210/jc.2010-2704"
+    },
+    {
+     "id": "S3",
+     "title": "Evaluation, treatment, and prevention of vitamin D deficiency: an Endocrine Society clinical practice guideline",
+     "publisher": "Holick MF et al., J Clin Endocrinol Metab",
+     "year": 2011,
+     "url": "https://doi.org/10.1210/jc.2011-0385"
+    },
+    {
+     "id": "S4",
+     "title": "Vitamin D for the prevention of disease: an Endocrine Society clinical practice guideline",
+     "publisher": "Demay MB et al., J Clin Endocrinol Metab",
+     "year": 2024,
+     "url": "https://doi.org/10.1210/clinem/dgae290"
+    },
+    {
+     "id": "S5",
+     "title": "Vitamin D, 25-Hydroxy, test 081950",
+     "publisher": "LabCorp",
+     "year": 2026,
+     "url": "https://www.labcorp.com/tests/081950/vitamin-d-25-hydroxy"
+    },
+    {
+     "id": "S6",
+     "title": "IOM committee members respond to Endocrine Society vitamin D guideline",
+     "publisher": "Rosen CJ et al., J Clin Endocrinol Metab",
+     "year": 2012,
+     "url": "https://doi.org/10.1210/jc.2011-2218"
+    },
+    {
+     "id": "S7",
+     "title": "Vitamin D and Health",
+     "publisher": "Scientific Advisory Committee on Nutrition (UK)",
+     "year": 2016,
+     "url": "https://assets.publishing.service.gov.uk/media/5a804e36ed915d74e622dafa/SACN_Vitamin_D_and_Health_report.pdf"
+    },
+    {
+     "id": "S8",
+     "title": "Vitamin D Deficiency - Is There Really a Pandemic? (not opened)",
+     "publisher": "Manson JE et al., N Engl J Med",
+     "year": 2016,
+     "url": "https://doi.org/10.1056/NEJMp1608005"
+    },
+    {
+     "id": "S9",
+     "title": "Screening for Vitamin D Deficiency in Adults: US Preventive Services Task Force Recommendation Statement",
+     "publisher": "USPSTF / JAMA",
+     "year": 2021,
+     "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/vitamin-d-deficiency-screening"
+    }
+   ],
+   "short": "Vitamin D",
+   "group": "Thyroid and hormones",
+   "aliases": [
+    "vitamin d",
+    "25-hydroxyvitamin d",
+    "25 hydroxyvitamin d",
+    "25-oh vitamin d",
+    "25(oh)d",
+    "25 oh d",
+    "vit d",
+    "vitamin d3",
+    "vitamin d, 25-hydroxy"
+   ],
+   "scale": [
+    0,
+    80
+   ]
+  },
+  {
+   "id": "testosterone_female",
+   "name": "Testosterone, total (women)",
+   "units": [
+    {
+     "unit": "ng/dL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "nmol/L",
+     "toCanonical": 28.8
+    },
+    {
+     "unit": "pmol/L",
+     "toCanonical": 0.0288
+    }
+   ],
+   "canonicalUnit": "ng/dL",
+   "labRange": {
+    "female": [
+     9,
+     55
+    ],
+    "male": [
+     300,
+     1080
+    ],
+    "any": null,
+    "source": "ARUP 0081058 LC-MS/MS: premenopausal 18+ 9-55 ng/dL, postmenopausal 5-32; male 18-39 y 300-1080. LabCorp 004226 (ECLIA): female 20-30 y 13-71, 31-40 y 8-60, 41-60 y 4-50",
+    "url": "https://ltd.aruplab.com/Tests/Pub/0081058"
+   },
+   "origin": "The lab pages do not state the population behind the female interval. Published LC-MS/MS female ranges come from Haring et al. 2012 (985 women aged 20-80 in one German cohort; 2.5th-97.5th percentile 0.35-1.97 nmol/L, about 10-57 ng/dL, declining with age) [S3] and Braunstein et al. 2011 (161 normally cycling women aged 18-49, immunoassay; 5th-95th percentile 15-46 ng/dL for a 30-year-old) [S4]. The Endocrine Society's 2007 assay statement called for normative values 'for both genders and children' to be established only after assays are standardised [S7].",
+   "sexSpecific": {
+    "exists": true,
+    "female": null,
+    "male": null,
+    "what": "Lower limit of the adult reference interval by sex (ARUP LC-MS/MS). There is no guideline threshold for 'low testosterone' in women: 'No cutoff blood level can be used for any measured circulating androgen to differentiate women with and without sexual dysfunction' [S6].",
+    "source": "[S1], [S6]"
+   },
+   "contested": {
+    "band": null,
+    "summary": "'Direct assays for the measurement of total and free testosterone are highly unreliable in the female range' (Grade A) while LC-MS/MS measures 'with high accuracy and reproducibility' [S6]; LabCorp's female range is produced on a direct ECLIA immunoassay [S2] and ARUP gives no female interval on its immunoassay [S1b]. Reference ranges rest on 985 [S3] and 161 [S4] women. Endocrine Society 2014: 'We recommend against making a clinical diagnosis of androgen deficiency syndrome in healthy women' because of 'a lack of a well-defined syndrome' and 'the lack of valid reference ranges for women' [S5].",
+    "sources": [
+     "S3",
+     "S4",
+     "S5",
+     "S6",
+     "S7"
+    ]
+   },
+   "guidanceInBand": "'A blood total testosterone level should not be used to diagnose HSDD' [S6]; 'We recommend against making a clinical diagnosis of androgen deficiency syndrome in healthy women' [S5]; if testosterone is prescribed, 'Dosing should be limited to achieving testosterone concentrations in the physiologic premenopausal range' [S6].",
+   "confidence": "high",
+   "sources": [
+    {
+     "id": "S1",
+     "title": "Testosterone (Adult Females, Children, or Individuals on Testosterone-Suppressing Hormone Therapy), test 0081058",
+     "publisher": "ARUP Laboratories",
+     "year": 2026,
+     "url": "https://ltd.aruplab.com/Tests/Pub/0081058"
+    },
+    {
+     "id": "S1b",
+     "title": "Testosterone (Adult Males or Individuals on Testosterone Hormone Therapy), test 0070130",
+     "publisher": "ARUP Laboratories",
+     "year": 2026,
+     "url": "https://ltd.aruplab.com/Tests/Pub/0070130"
+    },
+    {
+     "id": "S2",
+     "title": "Testosterone, Total, test 004226",
+     "publisher": "LabCorp",
+     "year": 2026,
+     "url": "https://www.labcorp.com/tests/004226/testosterone-total"
+    },
+    {
+     "id": "S3",
+     "title": "Age-specific reference ranges for serum testosterone and androstenedione concentrations in women measured by LC-MS/MS",
+     "publisher": "Haring R et al., J Clin Endocrinol Metab",
+     "year": 2012,
+     "url": "https://doi.org/10.1210/jc.2011-2134"
+    },
+    {
+     "id": "S4",
+     "title": "Testosterone reference ranges in normally cycling healthy premenopausal women",
+     "publisher": "Braunstein GD et al., J Sex Med",
+     "year": 2011,
+     "url": "https://doi.org/10.1111/j.1743-6109.2011.02380.x"
+    },
+    {
+     "id": "S5",
+     "title": "Androgen therapy in women: a reappraisal: an Endocrine Society clinical practice guideline",
+     "publisher": "Wierman ME et al., J Clin Endocrinol Metab",
+     "year": 2014,
+     "url": "https://doi.org/10.1210/jc.2014-2260"
+    },
+    {
+     "id": "S6",
+     "title": "Global Consensus Position Statement on the Use of Testosterone Therapy for Women",
+     "publisher": "Davis SR et al., J Clin Endocrinol Metab",
+     "year": 2019,
+     "url": "https://doi.org/10.1210/jc.2019-01603"
+    },
+    {
+     "id": "S7",
+     "title": "Utility, limitations, and pitfalls in measuring testosterone: an Endocrine Society position statement",
+     "publisher": "Rosner W et al., J Clin Endocrinol Metab",
+     "year": 2007,
+     "url": "https://doi.org/10.1210/jc.2006-1864"
+    }
+   ],
+   "short": "Testosterone (women)",
+   "group": "Thyroid and hormones",
+   "aliases": [
+    "testosterone",
+    "total testosterone",
+    "testo"
+   ],
+   "scale": [
+    0,
+    100
+   ]
+  },
+  {
+   "id": "amh",
+   "name": "AMH (anti-Müllerian hormone)",
+   "units": [
+    {
+     "unit": "ng/mL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "pmol/L",
+     "toCanonical": 0.14
+    }
+   ],
+   "canonicalUnit": "ng/mL",
+   "labRange": {
+    "female": [
+     1.23,
+     11.51
+    ],
+    "male": null,
+    "any": null,
+    "source": "LabCorp 500183 (ECL): female 20-25 y 1.23-11.51; 26-30 y 1.03-11.10; 31-35 y 0.66-8.75; 36-40 y 0.42-8.34; 41-46 y 0.26-5.81; 47-54 y <=0.82; 55+ <=0.18 ng/mL. ARUP 2002656 (ELISA): 18-29 y 0.401-16.015; 30-39 y 0.176-11.705; 40-45 y <=6.282",
+    "url": "https://www.labcorp.com/tests/500183/anti-m-llerian-hormone-amh"
+   },
+   "labRangeByAge": {
+    "female": {
+     "20-25": [
+      1.23,
+      11.51
+     ],
+     "26-30": [
+      1.03,
+      11.1
+     ],
+     "31-35": [
+      0.66,
+      8.75
+     ],
+     "36-40": [
+      0.42,
+      8.34
+     ],
+     "41-46": [
+      0.26,
+      5.81
+     ],
+     "47-54": [
+      0,
+      0.82
+     ],
+     "55+": [
+      0,
+      0.18
+     ]
+    },
+    "source": "LabCorp 500183"
+   },
+   "origin": "Age-banded percentiles whose population is not named on the lab pages; the two labs' lower limits for a woman aged 30-35 differ about fourfold (0.66 vs 0.176 ng/mL) [S1, S2]. Values are method-specific because no international standard existed: in the 2020 WHO/NIBSC study the candidate reagent 16/190 was commutable for 6 methods, partially for 3 and non-commutable for 7 of 16 valid methods, and WHO established it only as a Reference Reagent [S3].",
+   "sexSpecific": {
+    "exists": true,
+    "female": null,
+    "male": null,
+    "what": "Ranges are female- and age-specific by construction; no guideline fertility threshold exists. ACOG: a single AMH 'should not be used for counseling patients in this regard' (time to pregnancy) outside infertility care [S4].",
+    "source": "[S1], [S4]"
+   },
+   "contested": {
+    "band": [
+     0,
+     0.7
+    ],
+    "summary": "Steiner et al. 2017 (750 women aged 30-44, no infertility history): with AMH <0.7 ng/mL (n = 84) vs 0.7-8.4, conception by 6 cycles was 65% (95% CI 50-75) vs 62% (57-66) and by 12 cycles 84% (70-91) vs 75% (70-79); adjusted HR 1.19 (0.88-1.61). Low AMH 'were not associated with reduced fertility' [S6]. Yet labs flag low-for-age values and ACOG had to issue an opinion for women 'not seeking fertility care' [S4]; 7 of 16 assay methods are non-commutable with the WHO reagent [S3].",
+    "sources": [
+     "S3",
+     "S4",
+     "S5",
+     "S6"
+    ]
+   },
+   "guidanceInBand": "ACOG 773: AMH 'should not be used for counseling patients in this regard' (time to pregnancy) and routine testing to predict pregnancy loss 'is not recommended' [S4]; ASRM 2020: ovarian-reserve markers 'are weak predictors of reproductive potential when age is taken into account' [S5].",
+   "confidence": "high",
+   "sources": [
+    {
+     "id": "S1",
+     "title": "Anti-Müllerian Hormone (AMH), test 500183",
+     "publisher": "LabCorp",
+     "year": 2026,
+     "url": "https://www.labcorp.com/tests/500183/anti-m-llerian-hormone-amh"
+    },
+    {
+     "id": "S2",
+     "title": "Anti-Mullerian Hormone, test 2002656",
+     "publisher": "ARUP Laboratories",
+     "year": 2026,
+     "url": "https://ltd.aruplab.com/Tests/Pub/2002656"
+    },
+    {
+     "id": "S3",
+     "title": "Establishment of a WHO Reference Reagent for anti-Mullerian hormone",
+     "publisher": "Ferguson J et al., Reprod Biol Endocrinol",
+     "year": 2020,
+     "url": "https://doi.org/10.1186/s12958-020-00641-9"
+    },
+    {
+     "id": "S4",
+     "title": "Committee Opinion No. 773: The Use of Antimüllerian Hormone in Women Not Seeking Fertility Care",
+     "publisher": "ACOG, Obstet Gynecol",
+     "year": 2019,
+     "url": "https://doi.org/10.1097/AOG.0000000000003162"
+    },
+    {
+     "id": "S5",
+     "title": "Testing and interpreting measures of ovarian reserve: a committee opinion",
+     "publisher": "Practice Committee of the ASRM, Fertil Steril",
+     "year": 2020,
+     "url": "https://doi.org/10.1016/j.fertnstert.2020.09.134"
+    },
+    {
+     "id": "S6",
+     "title": "Association Between Biomarkers of Ovarian Reserve and Infertility Among Older Women of Reproductive Age",
+     "publisher": "Steiner AZ et al., JAMA",
+     "year": 2017,
+     "url": "https://doi.org/10.1001/jama.2017.14588"
+    }
+   ],
+   "short": "AMH",
+   "group": "Thyroid and hormones",
+   "aliases": [
+    "amh",
+    "anti-mullerian hormone",
+    "anti-müllerian hormone",
+    "antimullerian hormone",
+    "anti mullerian hormone"
+   ],
+   "scale": [
+    0,
+    8
+   ]
+  },
+  {
+   "id": "prolactin",
+   "name": "Prolactin",
+   "units": [
+    {
+     "unit": "ng/mL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "µg/L",
+     "toCanonical": 1
+    },
+    {
+     "unit": "mIU/L",
+     "toCanonical": 0.0472
+    }
+   ],
+   "canonicalUnit": "ng/mL",
+   "labRange": {
+    "female": [
+     2.8,
+     29.2
+    ],
+    "male": [
+     2.1,
+     17.7
+    ],
+    "any": null,
+    "source": "ARUP 0070115 (CLIA, 10 y+); LabCorp 004465 gives female 13-50 y 4.8-33.4, male 31-50 y 3.9-22.7",
+    "url": "https://ltd.aruplab.com/Tests/Pub/0070115"
+   },
+   "origin": "Manufacturer reference-interval studies (LabCorp cites the Roche package insert) [S2]; population not described. Endocrine Society 2011: 'Assay-specific normal values are higher in women than in men and are generally lower than 25 μg/liter' [S3].",
+   "sexSpecific": {
+    "exists": true,
+    "female": 29.2,
+    "male": 17.7,
+    "what": "Upper limit of the adult reference interval (ARUP). ARUP also lists pregnancy 9.7->200 and postmenopausal 1.8-20.3 ng/mL [S1].",
+    "source": "[S1]"
+   },
+   "contested": {
+    "band": null,
+    "summary": "Macroprolactin, a biologically inactive prolactin-IgG complex, is detected by immunoassays: 'All prolactin assays currently available are affected with 5-25% of results' indicating hyperprolactinaemia being falsely elevated [S4]. Suliman et al. 2003 found 21 women whose hyperprolactinaemia (>1000 mIU/L) was 'accounted for entirely by the presence of macroprolactin'; pituitary imaging had been performed in 93% and dopamine agonists prescribed in 87% [S5].",
+    "sources": [
+     "S3",
+     "S4",
+     "S5"
+    ]
+   },
+   "guidanceInBand": "Endocrine Society 2011 Rec 1.1: 'a level above the upper limit of normal confirms the diagnosis as long as the serum sample was obtained without excessive venipuncture stress'; Rec 1.2: 'In patients with asymptomatic hyperprolactinemia, we suggest assessing for macroprolactin' [S3].",
+   "confidence": "high",
+   "sources": [
+    {
+     "id": "S1",
+     "title": "Prolactin, test 0070115",
+     "publisher": "ARUP Laboratories",
+     "year": 2026,
+     "url": "https://ltd.aruplab.com/Tests/Pub/0070115"
+    },
+    {
+     "id": "S2",
+     "title": "Prolactin, test 004465",
+     "publisher": "LabCorp",
+     "year": 2026,
+     "url": "https://www.labcorp.com/tests/004465/prolactin"
+    },
+    {
+     "id": "S3",
+     "title": "Diagnosis and treatment of hyperprolactinemia: an Endocrine Society clinical practice guideline",
+     "publisher": "Melmed S et al., J Clin Endocrinol Metab",
+     "year": 2011,
+     "url": "https://doi.org/10.1210/jc.2010-1692"
+    },
+    {
+     "id": "S4",
+     "title": "Interference by macroprolactin in assays for prolactin: will the In Vitro Diagnostics Regulation lead to a solution at last?",
+     "publisher": "Fahie-Wilson MN et al., Clin Chem Lab Med",
+     "year": 2022,
+     "url": "https://doi.org/10.1515/cclm-2022-0460"
+    },
+    {
+     "id": "S5",
+     "title": "Frequent misdiagnosis and mismanagement of hyperprolactinemic patients before the introduction of macroprolactin screening",
+     "publisher": "Suliman AM et al., Clin Chem",
+     "year": 2003,
+     "url": "https://doi.org/10.1373/49.9.1504"
+    }
+   ],
+   "short": "Prolactin",
+   "group": "Thyroid and hormones",
+   "aliases": [
+    "prolactin",
+    "prl"
+   ],
+   "scale": [
+    0,
+    60
+   ]
+  },
+  {
+   "id": "vitamin_b12",
+   "name": "Vitamin B12 (cobalamin)",
+   "units": [
+    {
+     "unit": "pg/mL",
+     "toCanonical": 1
+    },
+    {
+     "unit": "ng/L",
+     "toCanonical": 1
+    },
+    {
+     "unit": "pmol/L",
+     "toCanonical": 1.355
+    }
+   ],
+   "canonicalUnit": "pg/mL",
+   "labRange": {
+    "female": null,
+    "male": null,
+    "any": [
+     232,
+     1245
+    ],
+    "source": "LabCorp 001503 (ECLIA)",
+    "url": "https://www.labcorp.com/tests/001503/vitamin-b12"
+   },
+   "origin": "Manufacturer interval. The historical decision point 'commonly set in the region of 200 ng/L (148 pmol/L)' derives partly from older radioassay and microbiological methods rather than current assays [S3]; BSH 2014 says cut-offs cannot be standardised across methods and recommends local ranges [S4].",
+   "sexSpecific": {
+    "exists": false,
+    "female": null,
+    "male": null,
+    "what": "No sex-specific threshold found; pregnancy is treated as an interpretive exception without a verified numeric threshold [S3].",
+    "source": "[S3]"
+   },
+   "contested": {
+    "band": [
+     180,
+     350
+    ],
+    "summary": "'There is no gold standard test for deficiency' [S3]. NICE NG239 (2024) 'suggests an indeterminate range of 180 to 350 ng/L (133 to 258 pmol/L)' with MMA for symptomatic people [S3]; a UK survey found only 16.6% of laboratories used the NG239 threshold of 180 ng/L and reported thresholds ranged 65-239 ng/L [S5]. LabCorp's lower limit (232 pg/mL) sits inside that indeterminate band [S1].",
+    "sources": [
+     "S3",
+     "S4",
+     "S5"
+    ]
+   },
+   "guidanceInBand": "Per NG239 as described by Harrington 2025: 'MMA measurement should be considered in people who have symptoms or signs of B12 deficiency' [S3]; BSH 2014: do not delay treatment when clinical features strongly suggest deficiency but tests disagree [S4].",
+   "confidence": "medium",
+   "sources": [
+    {
+     "id": "S1",
+     "title": "Vitamin B12, test 001503",
+     "publisher": "LabCorp",
+     "year": 2026,
+     "url": "https://www.labcorp.com/tests/001503/vitamin-b12"
+    },
+    {
+     "id": "S3",
+     "title": "The application and interpretation of laboratory biomarkers for the evaluation of vitamin B12 status",
+     "publisher": "Harrington DJ et al., Ann Clin Biochem",
+     "year": 2025,
+     "url": "https://doi.org/10.1177/00045632241292432"
+    },
+    {
+     "id": "S4",
+     "title": "Guidelines for the diagnosis and treatment of cobalamin and folate disorders",
+     "publisher": "Devalia V et al., Br J Haematol",
+     "year": 2014,
+     "url": "https://doi.org/10.1111/bjh.12959"
+    },
+    {
+     "id": "S5",
+     "title": "Unwarranted variation in total B12 test thresholds across the UK ... to support implementation of NICE NG239",
+     "publisher": "Stevenson E et al., Clin Chem Lab Med",
+     "year": 2026,
+     "url": "https://doi.org/10.1515/cclm-2026-0658"
+    }
+   ],
+   "short": "Vitamin B12",
+   "group": "Vitamins",
+   "aliases": [
+    "vitamin b12",
+    "b12",
+    "cobalamin",
+    "vit b12"
+   ],
+   "scale": [
+    100,
+    1000
+   ]
+  }
+ ]
+}
