@@ -5,6 +5,7 @@ import Analytes from './pages/Analytes'
 import AnalytePage from './pages/AnalytePage'
 import Methods from './pages/Methods'
 import About from './pages/About'
+import NotFound from './pages/NotFound'
 import QuizIndex from './quiz/QuizIndex'
 import QuizPage from './quiz/QuizPage'
 
@@ -14,19 +15,19 @@ function ScrollToTop() {
   return null
 }
 
-const nav = ({ isActive }: { isActive: boolean }) => isActive ? 'text-berry font-medium' : 'text-ink-2 hover:text-berry'
+const nav = ({ isActive }: { isActive: boolean }) => `pb-0.5 border-b ${isActive ? 'text-ink border-ink' : 'text-ink-2 border-transparent hover:text-ink hover:border-rule'}`
 
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
-      <header className="sticky top-0 z-30 bg-blush border-b border-hairline">
-        <div className="mx-auto max-w-6xl px-4 min-h-14 py-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
-          <Link to="/" className="display text-base sm:text-xl font-medium tracking-tight text-berry whitespace-nowrap">Normal for whom?</Link>
-          <nav className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px] font-medium">
-            <NavLink to="/" end className={nav}>Check a result</NavLink>
-            <NavLink to="/analytes" className={nav}>The ranges</NavLink>
-            <NavLink to="/quiz" className={nav}>Quiz</NavLink>
+      <header className="border-b border-rule">
+        <div className="mx-auto max-w-5xl px-5 py-3 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1.5">
+          <Link to="/" className="serif text-[1.15rem] font-semibold tracking-tight text-ink whitespace-nowrap">Normal for whom?</Link>
+          <nav className="flex flex-wrap items-baseline gap-x-5 gap-y-1 text-[13.5px]" aria-label="Sections">
+            <NavLink to="/" end className={nav}>Comparison tool</NavLink>
+            <NavLink to="/analytes" className={nav}>Table of intervals</NavLink>
+            <NavLink to="/quiz" className={nav}>Self-assessment</NavLink>
             <NavLink to="/methods" className={nav}>Methods</NavLink>
             <NavLink to="/about" className={nav}>About</NavLink>
           </nav>
@@ -41,16 +42,13 @@ export default function App() {
           <Route path="/quiz/:slug" element={<QuizPage />} />
           <Route path="/methods" element={<Methods />} />
           <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      <footer className="mt-20">
-        <div className="mx-auto max-w-6xl px-4 py-10 text-sm text-ink-2 border-t border-hairline/70 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-          <div><span className="display text-berry font-semibold">Normal for whom?</span> <span className="text-ink-3">A project of The Women's Health Record.</span></div>
-          <div className="flex gap-4">
-            <a href="https://lucylepoidevin.github.io/thewomenshealthrecord/" className="hover:text-berry" target="_blank" rel="noreferrer">The Women's Health Record</a>
-            <Link to="/methods" className="hover:text-berry">Methods &amp; sources</Link>
-            <Link to="/about" className="hover:text-berry">About</Link>
-          </div>
+      <footer className="mt-24 border-t border-rule">
+        <div className="mx-auto max-w-5xl px-5 py-8 meta flex flex-col sm:flex-row gap-2 sm:items-baseline sm:justify-between">
+          <p>Normal for whom? A companion to <a href="https://lucylepoidevin.github.io/thewomenshealthrecord/" className="link" target="_blank" rel="noreferrer">The Women's Health Record</a>. Not medical advice.</p>
+          <p className="flex gap-5"><Link to="/methods" className="link">Methods</Link><Link to="/about" className="link">About</Link><a href="https://github.com/lucylepoidevin/thewomenshealthrecord2" className="link" target="_blank" rel="noreferrer">Source and data</a></p>
         </div>
       </footer>
     </div>

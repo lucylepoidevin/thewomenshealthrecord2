@@ -2,7 +2,7 @@
 export type Unit = { unit: string; toCanonical: number; offset?: number }
 /** Either end may be null for an open-ended limit ('>39' or '<33'). */
 export type Range = [number | null, number | null]
-export type SourceRef = { id: string; title: string; publisher: string; year?: number; url: string }
+export type SourceRef = { id: string; title: string; publisher: string; year?: number; url: string; note?: string }
 
 export type Analyte = {
   id: string
@@ -10,10 +10,14 @@ export type Analyte = {
   short: string
   group: string
   aliases: string[]
+  /** Phrases that mark a line as a different test (e.g. "free testosterone" for total testosterone). */
+  exclude?: string[]
+  /** Shown with the entry: a condition on its use, such as assay specificity. */
+  note?: string
   units: Unit[]
   canonicalUnit: string
-  /** Display scale for the bar, in canonical units. */
-  scale: Range
+  /** Default axis range, in canonical units; widened at render time to hold the intervals shown. */
+  scale: [number, number]
   labRange: { female: Range | null; male: Range | null; any: Range | null; source: string; url: string }
   origin: string
   sexSpecific: { exists: boolean; female: number | null; male: number | null; what: string; source: string }

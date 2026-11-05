@@ -1,0 +1,58 @@
+[
+ {
+  "id": "nt_probnp",
+  "field": "origin",
+  "why": "The compiled text said women were higher at every age. Welsh et al. 2022 report higher medians in women under 30 and at 50 to 59, and higher medians in men at 80 or over. The ESC wording is paraphrased, not quoted: the guideline text is plural.",
+  "find": "The 125 pg/mL rule-out threshold is the value stated by the European Society of Cardiology (ESC) as the “upper limit of normal in the non-acute setting” [S19], a single value for both sexes. Healthy-population data show higher values in women at every age: in 18,356 participants in Scotland without cardiovascular disease, median (97.5th percentile) NT-proBNP under 30 years of age was 51 (196) pg/mL in women and 21 (104) pg/mL in men [S20].",
+  "replace": "The 125 pg/mL rule-out threshold is the upper limit of normal in the non-acute setting stated by the European Society of Cardiology (ESC) [S19], a single value for both sexes. In 18,356 participants in Scotland without cardiovascular disease, median (97.5th percentile) NT-proBNP was higher in women than in men in younger adults and lower at the oldest ages: 51 (196) pg/mL in women and 21 (104) pg/mL in men under 30 years of age, 66 (299) and 38 (195) pg/mL at 50 to 59 years, and 240 (2,704) and 281 (6,792) pg/mL at 80 years or over [S20]."
+ },
+ {
+  "id": "nt_probnp",
+  "field": "origin",
+  "why": "Follows from the correction above: the Iowa intervals give women the higher limit below 75 years only.",
+  "find": "Sex-partitioned hospital reference intervals (for example, Iowa) therefore give women a higher upper limit than men [S18].",
+  "replace": "Sex-partitioned hospital reference intervals (for example, Iowa) give women a higher upper limit than men below 75 years of age [S18]."
+ },
+ {
+  "id": "nt_probnp",
+  "field": "contestedSummary",
+  "why": "The odds ratio of 9.48 is the adjusted estimate for the whole cohort, not for adults under 30; the proportions at 80 or over run the other way.",
+  "find": "NT-proBNP ≥125 pg/mL was present in 9.8% of healthy women and 1.4% of men under 30 years of age (adjusted odds ratio for women 9.48, 95% CI 5.60 to 16.1); the authors stated",
+  "replace": "NT-proBNP ≥125 pg/mL was present in 9.8% of women and 1.4% of men under 30 years of age, and in 76.5% of women and 81.0% of men aged 80 years or over; across the cohort the adjusted odds ratio for women relative to men was 9.48 (95% CI 5.60 to 16.1). The authors stated"
+ },
+ {
+  "id": "nt_probnp",
+  "field": "contestedSummary",
+  "why": "The direction applies to younger adults, per the correction above.",
+  "find": "The direction of misclassification is over-identification of healthy women, the opposite of that for troponin.",
+  "replace": "In younger adults the direction of misclassification is over-identification of women without heart failure, the opposite of that for troponin."
+ },
+ {
+  "id": "ferritin",
+  "field": "contestedSummary",
+  "why": "The 30 and 50 ng/mL thresholds of the ASH 2026 guideline were read in secondary reports; only the abstract of the guideline was verified.",
+  "find": "the American Society of Hematology (2026) raised its diagnostic threshold to 30 ng/mL irrespective of anaemia, with 50 ng/mL in higher-risk groups [S11, S12].",
+  "replace": "the American Society of Hematology (2026) raised its diagnostic threshold to 30 ng/mL irrespective of anaemia, with 50 ng/mL in higher-risk groups, as reported in secondary accounts of the guideline; the threshold values were not verified against the full text [S11, S12]."
+ },
+ {
+  "id": "troponin_i_hs_abbott",
+  "field": "contestedSummary",
+  "why": "The two percentages are the validation and implementation phases of the trial; without the labels the sentence reads as a fall described as no reduction.",
+  "find": "but MI or cardiovascular death at 1 year in reclassified patients was not reduced (15% versus 12%; adjusted odds ratio 1.10, 95% CI 0.75 to 1.61) [S2][S3].",
+  "replace": "but implementation of the sex-specific thresholds was not associated with a lower rate of MI or cardiovascular death at 1 year in reclassified patients (15% in the validation phase and 12% in the implementation phase; adjusted odds ratio 1.10, 95% CI 0.75 to 1.61) [S2][S3]."
+ },
+ {
+  "id": "alp",
+  "field": "contestedSummary",
+  "why": "The compound citation token [S17 vs S7, S9] is split so that each claim carries its own reference.",
+  "find": "(135 versus 123 IU/L), whereas single-interval laboratories apply one limit to all adults [S17 vs S7, S9],",
+  "replace": "(135 versus 123 IU/L) [S17], whereas single-interval laboratories apply one limit to all adults [S7, S9],"
+ },
+ {
+  "id": "amh",
+  "field": "contestedSummary",
+  "why": "Register: 'flag' replaced by a description of what the laboratory report does.",
+  "find": "Laboratories nonetheless flag low-for-age values",
+  "replace": "Laboratories nonetheless mark values below the age-specific interval as low"
+ }
+]

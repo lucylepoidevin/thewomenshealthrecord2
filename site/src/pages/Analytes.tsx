@@ -1,49 +1,53 @@
 import { Link } from 'react-router-dom'
 import { useAnalytes } from '../lib/data'
-import { fmt, rangeText } from '../lib/format'
+import { fmt, rangeText, GRADE } from '../lib/format'
 
 export default function Analytes() {
   const { data, error } = useAnalytes()
   return (
-    <div className="mx-auto max-w-6xl px-4 pt-14 pb-16">
-      <header className="max-w-[42rem]">
-        <p className="eyebrow">The ranges</p>
-        <h1 className="display mt-2 text-3xl sm:text-[2.5rem] font-medium leading-[1.15]">Every test in the table, with its laboratory range, sex-specific threshold and contested band</h1>
-        <p className="mt-4 text-[17px] text-ink-2 leading-relaxed">Values in the unit each laboratory reports. The contested band is the interval where published studies or guidelines disagree with the laboratory range for women.</p>
+    <div className="mx-auto max-w-5xl px-5 pt-12 pb-10">
+      <header className="max-w-[46rem]">
+        <p className="meta">Table of intervals</p>
+        <h1 className="mt-1.5 text-[1.6rem] sm:text-[2rem] leading-[1.2]">Laboratory reference intervals, sex-specific thresholds and disputed intervals, by test</h1>
       </header>
-      {error && <p className="mt-6 text-sm text-berry">Could not load the table: {error}</p>}
+      {error && <p className="meta mt-6 text-accent">The table could not be loaded ({error}).</p>}
       {data && (
-        <div className="table-wrap mt-8">
-          <table className="w-full border-collapse text-[14px]">
-            <thead>
-              <tr className="text-[12px] font-semibold text-ink-3 text-left">
-                <th className="py-2 pr-4">Test</th>
-                <th className="py-2 pr-4">Unit</th>
-                <th className="py-2 pr-4">Lab range, women</th>
-                <th className="py-2 pr-4">Lab range, men</th>
-                <th className="py-2 pr-4">Sex-specific threshold</th>
-                <th className="py-2 pr-4">Contested band</th>
-                <th className="py-2">Documentation</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.analytes.map(a => {
-                const f = a.labRange.female ?? a.labRange.any, m = a.labRange.male ?? a.labRange.any
-                return (
-                  <tr key={a.id} className="border-t border-hairline/70 align-top">
-                    <td className="py-2.5 pr-4"><Link to={`/analyte/${a.id}`} className="text-berry underline underline-offset-2">{a.name}</Link><div className="text-[11px] text-ink-3">{a.group}</div></td>
-                    <td className="py-2.5 pr-4 text-ink-2">{a.canonicalUnit}</td>
-                    <td className="py-2.5 pr-4 tabular-nums">{f ? rangeText(f) : '—'}</td>
-                    <td className="py-2.5 pr-4 tabular-nums">{m ? rangeText(m) : '—'}</td>
-                    <td className="py-2.5 pr-4 tabular-nums">{a.sexSpecific.exists ? (a.sexSpecific.female !== null && a.sexSpecific.male !== null ? `F ${fmt(a.sexSpecific.female)} / M ${fmt(a.sexSpecific.male)}` : 'yes') : 'none'}</td>
-                    <td className="py-2.5 pr-4 tabular-nums">{a.contested.band ? rangeText(a.contested.band) : '—'}</td>
-                    <td className="py-2.5 text-ink-2">{a.confidence === 'high' ? 'well documented' : a.confidence === 'medium' ? 'partly documented' : 'thinly documented'}</td>
-                  </tr>
-                )
-              })}
-            </tbody>
-          </table>
-        </div>
+        <figure className="mt-8">
+          <figcaption className="caption mb-2"><b>Table 1.</b> Values for non-pregnant adults in the unit shown. Reference intervals are those of the laboratory named in each entry. The sex-specific threshold is a decision threshold that differs by sex in a current guideline or assay specification. The disputed interval lies between the laboratory limit and the limit supported by the published evidence cited in the entry. A dash indicates that none was identified.</figcaption>
+          <div className="table-wrap">
+            <table className="data">
+              <thead>
+                <tr>
+                  <th>Test</th>
+                  <th>Unit</th>
+                  <th>Reference interval, women</th>
+                  <th>Reference interval, men</th>
+                  <th>Sex-specific threshold<br /><span className="font-normal text-ink-3">women / men</span></th>
+                  <th>Disputed interval</th>
+                  <th>Documentation</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.analytes.map(a => {
+                  const f = a.labRange.female ?? a.labRange.any, m = a.labRange.male ?? a.labRange.any
+                  const sx = a.sexSpecific
+                  return (
+                    <tr key={a.id}>
+                      <td><Link to={`/analyte/${a.id}`} className="link">{a.short}</Link><div className="text-[12px] text-ink-3">{a.group}</div></td>
+                      <td className="mono text-[13px] text-ink-2">{a.canonicalUnit}</td>
+                      <td className="mono text-[13px]">{f ? rangeText(f) : '–'}</td>
+                      <td className="mono text-[13px]">{m ? rangeText(m) : '–'}</td>
+                      <td className="mono text-[13px]">{sx.exists && sx.female !== null && sx.male !== null ? `${fmt(sx.female)} / ${fmt(sx.male)}` : sx.exists ? <span className="font-sans text-ink-2">see entry</span> : '–'}</td>
+                      <td className="mono text-[13px]">{a.contested.band ? rangeText(a.contested.band) : '–'}</td>
+                      <td className="text-ink-2 text-[13px]">{GRADE[a.confidence].replace('Documentation: ', '')}</td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          </div>
+          <p className="caption mt-2">Table compiled {data.generated}. Documentation grades are defined in <Link to="/methods" className="link">Methods</Link>.</p>
+        </figure>
       )}
     </div>
   )

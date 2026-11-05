@@ -1,29 +1,29 @@
-const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <section className="grid gap-3 sm:grid-cols-[11rem_1fr] sm:gap-10 py-8 border-t border-hairline/70">
-    <h2 className="eyebrow pt-1">{title}</h2>
-    <div className="text-[17px] leading-[1.75] text-ink space-y-4">{children}</div>
-  </section>
-)
+import Section from '../components/Section'
 
 export default function About() {
   return (
-    <div className="mx-auto max-w-3xl px-4 pt-20 pb-16">
-      <header className="pb-8">
-        <p className="eyebrow">About</p>
-        <h1 className="display mt-2 text-3xl sm:text-[2.5rem] font-medium leading-[1.15]">About this project</h1>
+    <div className="mx-auto max-w-5xl px-5 pt-12 pb-10">
+      <header className="max-w-[46rem]">
+        <p className="meta">About</p>
+        <h1 className="mt-1.5 text-[1.6rem] sm:text-[2rem] leading-[1.2]">Purpose, rationale and authorship</h1>
       </header>
-      <Section title="What it is">
-        <p>Normal for whom? documents where the reference ranges on a blood test report came from, and where the published evidence says the range applied to women is set wrong. It is a companion to The Women's Health Record, a series of analyses of public data on how medicine studies, doses and diagnoses women and men differently.</p>
-      </Section>
-      <Section title="Why">
-        <p>A reference range is usually the central 95 percent of values from a reference population. Who was in that population, when, and whether anyone with an undetected deficiency was excluded, decides where "normal" falls. For several common tests those decisions were made on populations that do not represent women, or on a single threshold for both sexes where the distributions differ. The result is a report that reads "normal" for a value the guidelines themselves treat as a reason to investigate.</p>
-      </Section>
-      <Section title="How to read it">
-        <p>Nothing on this site is medical advice. A result that sits inside a contested band is a reason to read the sources on the card and to raise them with a clinician. The site reports positions and quotes guidelines; it does not interpret.</p>
-      </Section>
-      <Section title="Who">
-        <p>Compiled, built and written by Lucy LePoidevin. The entries await review by a clinical chemist and a haematologist, and corrections are welcome by email or through the repository.</p>
-      </Section>
+      <div className="max-w-[46rem]">
+        <Section title="Purpose">
+          <p className="prose">Normal for whom? documents the derivation of the reference intervals reported with common blood tests and the published evidence concerning the limits applied to women. It is a companion to The Women's Health Record, a series of analyses of public data on sex differences in the study, dosing and diagnosis of disease.</p>
+        </Section>
+        <Section title="Rationale">
+          <div className="prose">
+            <p>A reference interval depends on the population in which it was measured: who was included, when, and whether individuals with undetected deficiency or disease were excluded. For several common tests the interval in use was derived from populations that under-represent women or include women with untreated iron deficiency, or a single threshold is applied to both sexes although the distributions differ. In such cases a result may fall within the reported interval while lying in a range that current guidelines treat as an indication for further assessment.</p>
+            <p>The published evidence on these points is dispersed across guidelines, reference-interval studies and laboratory catalogues. This resource assembles it by test and cites each statement.</p>
+          </div>
+        </Section>
+        <Section title="Interpretation">
+          <p className="prose">The resource does not provide medical advice. It reports the position of a value relative to published intervals and quotes guideline statements. A value within a disputed interval is a basis for consulting the cited sources and a clinician; it is not a finding.</p>
+        </Section>
+        <Section title="Authorship and review">
+          <p className="prose">Compiled and written by Lucy LePoidevin. The entries await review by a clinical chemist and a haematologist. Corrections may be submitted through the <a href="https://github.com/lucylepoidevin/thewomenshealthrecord2/issues" target="_blank" rel="noreferrer">project repository</a>.</p>
+        </Section>
+      </div>
     </div>
   )
 }

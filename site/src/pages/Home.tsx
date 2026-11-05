@@ -1,44 +1,60 @@
 import { Link } from 'react-router-dom'
 import { useAnalytes } from '../lib/data'
 import Checker from '../checker/Checker'
+import Section from '../components/Section'
+
+const date = (iso?: string) => iso ? new Date(iso + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }) : ''
 
 export default function Home() {
   const { data, error } = useAnalytes()
   const groups = data ? [...new Set(data.analytes.map(a => a.group))] : []
+  const n = data?.analytes.length
   return (
-    <div>
-      <section className="mx-auto max-w-6xl px-4 pt-12 pb-6">
-        <div className="max-w-[42rem]">
-          <h1 className="display text-3xl sm:text-[2.5rem] font-medium leading-[1.15]">Normal for whom?</h1>
-          <p className="mt-4 text-[17px] text-ink-2 leading-relaxed">
-            A blood test report marks each result against a reference range. This page shows, for {data ? data.analytes.length : 'each of the'} common tests, where that range came from, whether a separate threshold exists for women, and where the published evidence says the female range is set wrong. Enter a result to see where it sits on each of those scales.
+    <div className="mx-auto max-w-5xl px-5 pt-12 pb-4">
+      <header className="max-w-[46rem]">
+        <h1 className="text-[1.6rem] sm:text-[2rem] leading-[1.2]">Reference intervals for {n ?? ''} common blood tests: derivation, sex-specific thresholds and disputed limits in women</h1>
+        <p className="meta mt-3">{data ? `Table of ${n} tests, compiled ${date(data.generated)}. Not peer reviewed; not yet reviewed by a clinical chemist or haematologist.` : ' '}</p>
+      </header>
+
+      <section className="mt-6 max-w-[46rem]" aria-labelledby="summary">
+        <h2 id="summary" className="label">Summary</h2>
+        <div className="prose mt-1.5">
+          <p>
+            A laboratory report compares each result with a reference interval, conventionally the central 95% of values in a reference population. For each test, this resource records the interval reported by a major clinical laboratory, the population from which it derives, any decision threshold that differs by sex, and the published evidence on the limit applied to women. The interval between the laboratory limit and the limit supported by that evidence is termed the disputed interval. The tool places a result on these scales and states its position; it does not interpret the result.
           </p>
         </div>
       </section>
-      {error && <p className="mx-auto max-w-6xl px-4 text-sm text-berry">Could not load the reference table: {error}</p>}
-      {!data && !error && <p className="mx-auto max-w-6xl px-4 text-sm text-ink-3">Loading the reference table…</p>}
-      {data && <Checker analytes={data.analytes} />}
 
-      <section className="mx-auto max-w-6xl px-4 pt-16 grid gap-x-12 gap-y-10 lg:grid-cols-2">
-        <div>
-          <h2 className="display text-2xl font-medium">Tests covered</h2>
+      <Section n={1} title="Comparison of a result with its reference interval">
+        {error && <p className="meta text-accent">The reference table could not be loaded ({error}).</p>}
+        {!data && !error && <p className="meta">Loading the reference table.</p>}
+        {data && <Checker analytes={data.analytes} />}
+      </Section>
+
+      <Section n={2} title="Tests in the table">
+        <div className="grid gap-x-10 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
           {groups.map(g => (
-            <div key={g} className="mt-4">
-              <p className="eyebrow">{g}</p>
-              <ul className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-[15px]">
-                {data!.analytes.filter(a => a.group === g).map(a => <li key={a.id}><Link to={`/analyte/${a.id}`} className="text-berry underline underline-offset-2">{a.short}</Link></li>)}
+            <div key={g}>
+              <h3 className="label" style={{ fontFamily: 'var(--font-sans)' }}>{g}</h3>
+              <ul className="mt-1.5 space-y-0.5 text-[15px]">
+                {data!.analytes.filter(a => a.group === g).map(a => <li key={a.id}><Link to={`/analyte/${a.id}`} className="link">{a.short}</Link></li>)}
               </ul>
             </div>
           ))}
-          <p className="mt-5 text-[14px] text-ink-2 leading-relaxed">Table dated {data?.generated}. Each entry records the laboratory range as one major laboratory publishes it, the study or committee that set it, any sex-specific threshold in a current guideline, and the published evidence against the female range, with every source linked. <Link to="/methods" className="text-berry underline underline-offset-2">Methods</Link>.</p>
         </div>
-        <div>
-          <h2 className="display text-2xl font-medium">Quiz</h2>
-          <p className="mt-3 text-[15px] text-ink-2 leading-relaxed">Ten questions on who the reference ranges were measured on, each answered with the study that set the number. <Link to="/quiz" className="text-berry underline underline-offset-2">Take the quiz</Link>.</p>
-          <h2 className="display text-2xl font-medium mt-10">What this page does not do</h2>
-          <p className="mt-3 text-[15px] text-ink-2 leading-relaxed">It does not interpret a result. It reports where a value sits relative to the published ranges and what the guidelines say about values in that position. The entries have not yet been reviewed by a clinical chemist or haematologist, and say so. A result that sits in a contested band is a reason to read the sources and raise them with a clinician, not a finding.</p>
+        <p className="prose mt-6 max-w-[46rem]">The intervals, thresholds and disputed intervals for all tests are tabulated in the <Link to="/analytes">table of intervals</Link>. The fields recorded for each test and the procedure for compiling them are described in <Link to="/methods">Methods</Link>.</p>
+      </Section>
+
+      <Section n={3} title="Scope and limitations">
+        <div className="prose max-w-[46rem]">
+          <p>The resource reports the position of a value relative to published intervals and quotes the guideline statements that apply to values in that position. It does not state whether a result is normal or abnormal, and it does not replace clinical assessment. Reference intervals differ between laboratories and assays; the interval shown is that of the laboratory named in each entry, for non-pregnant adults.</p>
+          <p>The entries were compiled from the primary sources listed under each one. They have not been reviewed by a clinical chemist, haematologist or endocrinologist. Each entry carries a documentation grade indicating how completely its sources were read.</p>
         </div>
-      </section>
+      </Section>
+
+      <Section n={4} title="Self-assessment">
+        <p className="prose max-w-[46rem]">A set of ten multiple-choice questions on the provenance of common reference intervals, each answered with its source, is available under <Link to="/quiz">Self-assessment</Link>.</p>
+      </Section>
     </div>
   )
 }

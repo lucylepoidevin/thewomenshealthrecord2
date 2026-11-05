@@ -1,7 +1,11 @@
 """Merge the research batches (research/batch-*.md, each ending in a ```json block) into site/public/data/analytes.json.
 
 Adds the fields the site needs beyond the research schema: short name, group, aliases for the line parser, and the display scale.
-Entries listed in META are included; anything else in the batches is skipped with a note. Run from the project folder:
+Entries listed in META are included; anything else in the batches is skipped with a note.
+
+The prose of each entry is then replaced by the edited text in pipeline/prose/batch-*.json (same numbers and citations,
+checked by pipeline/verify_prose.py), and the factual corrections in pipeline/prose/corrections.json are applied on top.
+Run from the project folder:
     python3 pipeline/build_analytes.py
 """
 import json, re, sys, datetime
@@ -36,14 +40,12 @@ META = {
     'hdl':             ('HDL cholesterol', 'Lipids', ['hdl', 'hdl cholesterol', 'hdl-c', 'hdl c'], [20, 110]),
     'triglycerides':   ('Triglycerides', 'Lipids', ['triglycerides', 'triglyceride', 'tg', 'trig', 'trigs'], [30, 400]),
     'tsh':             ('TSH', 'Thyroid and hormones', ['tsh', 'thyroid stimulating hormone', 'thyroid-stimulating hormone', 'thyrotropin'], [0, 8]),
-    'ft4':             ('Free T4', 'Thyroid and hormones', ['free t4', 'ft4', 'free thyroxine', 't4 free', 'thyroxine'], [0.4, 2.4]),
-    'ft3':             ('Free T3', 'Thyroid and hormones', ['free t3', 'ft3', 'free triiodothyronine', 't3 free'], [1.5, 5]),
+    'ft4':             ('Free T4', 'Thyroid and hormones', ['free t4', 'ft4', 'free thyroxine', 't4 free', 'thyroxine free', 't4, free', 'thyroxine, free'], [0.4, 2.4]),
     'vitamin_d':       ('Vitamin D', 'Thyroid and hormones', ['vitamin d', '25-hydroxyvitamin d', '25 hydroxyvitamin d', '25-oh vitamin d', '25(oh)d', '25 oh d', 'vit d', 'vitamin d3', 'vitamin d, 25-hydroxy'], [0, 80]),
     'testosterone_female': ('Testosterone (women)', 'Thyroid and hormones', ['testosterone', 'total testosterone', 'testo'], [0, 100]),
     'amh':             ('AMH', 'Thyroid and hormones', ['amh', 'anti-mullerian hormone', 'anti-müllerian hormone', 'antimullerian hormone', 'anti mullerian hormone'], [0, 8]),
     'prolactin':       ('Prolactin', 'Thyroid and hormones', ['prolactin', 'prl'], [0, 60]),
     'vitamin_b12':     ('Vitamin B12', 'Vitamins', ['vitamin b12', 'b12', 'cobalamin', 'vit b12'], [100, 1000]),
-    'folate':          ('Folate', 'Vitamins', ['folate', 'serum folate', 'folic acid'], [1, 25]),
 }
 
 def blocks(md: str):
@@ -66,6 +68,30 @@ OVERRIDES = {
     'testosterone_female': {'sexSpecific.female': None, 'sexSpecific.male': None},
     'amh': {'labRange.male': None},
 }
+# Phrases that mark a pasted line as a different test from the one its alias suggests.
+EXCLUDE = {
+    'testosterone_female': ['free testosterone', 'testosterone free', 'testosterone, free', 'bioavailable', 'dihydrotestosterone'],
+    'ft4': ['total t4', 'total thyroxine'],
+    'hdl': ['non-hdl', 'non hdl'],
+    'total_cholesterol': ['hdl', 'ldl', 'vldl'],
+    'haemoglobin': ['a1c', 'glycated', 'glycosylated', 'mean corpuscular', 'mch'],
+    'creatinine': ['urine', 'urinary', 'clearance', 'ratio'],
+    'glucose_fasting': ['urine', 'random', 'post', '2 h', '2h', '2-h'],
+    'vitamin_d': ['1,25', 'dihydroxy'],
+    'transferrin_saturation': [],
+}
+# A condition on the use of an entry, shown with it.
+TROPONIN_NOTE = 'Troponin thresholds are specific to the assay. This entry applies to the assay named in its title; the assay in use is stated on the laboratory report or available from the laboratory.'
+NOTES = {
+    'troponin_i_hs_abbott': TROPONIN_NOTE + ' A line that names troponin I without an assay is assigned to this entry.',
+    'troponin_t_hs_roche': TROPONIN_NOTE,
+    'troponin_i_hs_siemens': TROPONIN_NOTE,
+    'troponin_i_hs_beckman': TROPONIN_NOTE,
+    'testosterone_female': 'The entry concerns total testosterone in women. With male selected, the male reference interval of the same laboratory is shown and the text of the entry does not apply.',
+    'amh': 'Reference intervals for anti-Müllerian hormone are age-specific; the interval plotted is that for women aged 20 to 25 years. Intervals for other ages are listed under the derivation.',
+    'hba1c': 'Values in mmol/mol are converted with the IFCC to NGSP master equation (NGSP % = 0.09148 × IFCC + 2.152).',
+}
+
 # Research ids that differ from the site's ids.
 ID_ALIASES = {'transferrin-saturation': 'transferrin_saturation'}
 # Entries the research marked thin; left out until they are researched properly.
@@ -80,6 +106,35 @@ def fix_units(a):
             else:
                 u['toCanonical'] = 1
     a.pop('conversionNote', None)
+
+PROSE = {}
+for pf in sorted((ROOT / 'pipeline' / 'prose').glob('batch-*.json')):
+    PROSE.update(json.load(open(pf)))
+CORRECTIONS = json.load(open(ROOT / 'pipeline' / 'prose' / 'corrections.json'))
+
+def apply_prose(aid, a):
+    """Replace the research prose with the edited text, clean flagged source titles, then apply the recorded corrections."""
+    p = PROSE.get(aid)
+    if not p: print('  no edited prose for', aid); return
+    a['origin'] = p['origin']
+    a['sexSpecific']['what'] = p['sexSpecificWhat']
+    a['contested']['summary'] = p['contestedSummary']
+    a['guidanceInBand'] = p['guidanceInBand']
+    a['labRange']['source'] = p['labRangeSource']
+    for sid, fix in (p.get('sources') or {}).items():
+        for src in a['sources']:
+            if src['id'] == sid:
+                if fix.get('title'): src['title'] = fix['title']
+                if fix.get('publisher'): src['publisher'] = fix['publisher']
+                if fix.get('note'): src['note'] = fix['note']
+    key = {'origin': ('origin',), 'contestedSummary': ('contested', 'summary'), 'guidanceInBand': ('guidanceInBand',), 'sexSpecificWhat': ('sexSpecific', 'what'), 'labRangeSource': ('labRange', 'source')}
+    for c in CORRECTIONS:
+        if c['id'] != aid: continue
+        path = key[c['field']]
+        d = a
+        for part in path[:-1]: d = d[part]
+        if c['find'] not in d[path[-1]]: raise SystemExit(f"correction not applicable: {aid}.{c['field']}: {c['find'][:60]}")
+        d[path[-1]] = d[path[-1]].replace(c['find'], c['replace'])
 
 def apply_overrides(aid, a):
     for k, v in OVERRIDES.get(aid, {}).items():
@@ -128,6 +183,11 @@ for aid, (short, group, aliases, scale) in META.items():
     a.update(short=short, group=group, aliases=aliases, scale=scale)
     apply_overrides(aid, a)
     fix_units(a)
+    apply_prose(aid, a)
+    if EXCLUDE.get(aid): a['exclude'] = EXCLUDE[aid]
+    if NOTES.get(aid): a['note'] = NOTES[aid]
+    # the sexSpecific.source field holds citation tokens only; normalise '[S1], [S2]' to '[S1, S2]'
+    a['sexSpecific']['source'] = '[' + ', '.join(re.findall(r'[A-Z]+\d+[a-z]?', a['sexSpecific'].get('source', ''))) + ']' if re.search(r'[A-Z]+\d', a['sexSpecific'].get('source', '')) else ''
     # tolerate missing optional fields
     a.setdefault('guidanceInBand', '')
     a.setdefault('confidence', 'low')

@@ -2,56 +2,100 @@ import type { Analyte, Range } from '../lib/types'
 import { fmt, rangeText } from '../lib/format'
 import { useWidth } from '../lib/useWidth'
 
-/** One horizontal scale: lab range as a grey band, contested band hatched, sex-specific thresholds as ticks, the reader's value as a marker.
-    Rows, top to bottom: contested caption · threshold labels · the bar · range limits · range caption · the value. */
+const FEMALE = '#C2477A', MALE = '#8A7A2A', ACCENT = '#8B1E4B', INK = '#1C1A1B', INK2 = '#55504F', INK3 = '#827C7A'
+
+/** Tick positions at a round step: about five across the axis. */
+function ticks(lo: number, hi: number) {
+  const raw = (hi - lo) / 5
+  const mag = Math.pow(10, Math.floor(Math.log10(raw)))
+  const step = [1, 2, 2.5, 5, 10].map(m => m * mag).find(s => s >= raw) ?? raw
+  const out: number[] = []
+  for (let v = Math.ceil(lo / step - 1e-9) * step; v <= hi + step * 1e-6; v += step) out.push(Number(v.toPrecision(10)))
+  return out
+}
+
+/** The axis range: the entry's default, widened to hold every interval and threshold shown for the selected sex, and the value entered. */
+export function domain(a: Analyte, sex: 'female' | 'male', value?: number): [number, number] {
+  let [lo, hi] = a.scale
+  const lab = a.labRange[sex] ?? a.labRange.any
+  const shown = [...(lab ?? []), ...(a.contested.band ?? []), a.sexSpecific.exists ? a.sexSpecific.female : null, a.sexSpecific.exists ? a.sexSpecific.male : null].filter((v): v is number => v !== null && v !== undefined)
+  const top = Math.max(...shown, hi)
+  if (top > hi) hi = top * 1.08
+  const bottom = Math.min(...shown, lo)
+  if (bottom < lo) lo = bottom >= 0 && bottom < (hi - lo) * 0.25 ? 0 : bottom
+  // a value a little outside the axis extends it; a value far outside is drawn at the edge and labelled
+  if (value !== undefined) {
+    if (value > hi && value <= hi * 2.5) hi = value * 1.06
+    if (value < lo && value >= 0) lo = Math.max(0, value - (hi - lo) * 0.06)
+  }
+  return [lo, hi]
+}
+
+/** Range plot. One row per quantity, so that no two labels share a line:
+    laboratory reference interval · disputed interval · sex-specific thresholds · axis. The value entered is a vertical line through all rows. */
 export default function Scale({ a, sex, value }: { a: Analyte; sex: 'female' | 'male'; value?: number }) {
-  const lo = a.scale[0] as number, hi = a.scale[1] as number
+  const { ref, w: W } = useWidth<HTMLDivElement>()
+  const [lo, hi] = domain(a, sex, value)
+  const L = 4, R = 4
+  const x = (v: number) => L + ((Math.min(Math.max(v, lo), hi) - lo) / (hi - lo)) * (W - L - R)
   const lo_ = (r: Range) => r[0] ?? lo
   const hi_ = (r: Range) => r[1] ?? hi
-  const { ref, w } = useWidth<HTMLDivElement>()
-  const W = w, H = 118, L = 16, R = 16, y = 52
-  const x = (v: number) => L + ((Math.min(Math.max(v, lo), hi) - lo) / (hi - lo)) * (W - L - R)
   const lab = a.labRange[sex] ?? a.labRange.any
   const band = a.contested.band
   const sx = a.sexSpecific
-  const clipped = value !== undefined && (value < lo || value > hi)
-  const f = sx.exists && sx.female !== null ? x(sx.female) : null
-  const m = sx.exists && sx.male !== null ? x(sx.male) : null
-  const close = f !== null && m !== null && Math.abs(f - m) < 56
-  const near = (p: number, q: number) => Math.abs(p - q) < 24
-  /** Labels anchor away from the edges so they are never clipped. */
-  const anchor = (px: number, fallback: 'start' | 'middle' | 'end'): 'start' | 'middle' | 'end' => px < L + 36 ? 'start' : px > W - R - 36 ? 'end' : fallback
+  const f = sx.exists && sx.female !== null ? sx.female : null
+  const m = sx.exists && sx.male !== null ? sx.male : null
+  const who = sex === 'female' ? 'women' : 'men'
+
+  // rows are laid out top to bottom; each takes 38px (13px label, 12px bar, spacing)
+  let y = value !== undefined ? 30 : 8
+  const rows: { key: string; label: string; top: number }[] = []
+  const row = (key: string, label: string) => { rows.push({ key, label, top: y }); y += 38 }
+  if (lab) row('lab', `Laboratory reference interval, ${who}: ${rangeText(lab)}`)
+  if (band) row('band', `Disputed interval: ${rangeText(band)}`)
+  if (f !== null || m !== null) row('thr', `Sex-specific threshold${f !== null && m !== null ? 's' : ''}: ${[f !== null ? `women ${fmt(f)}` : null, m !== null ? `men ${fmt(m)}` : null].filter(Boolean).join(', ')}`)
+  const axisY = y + 4
+  const H = axisY + 34
+  const top = (k: string) => rows.find(r => r.key === k)!.top
+  const off = value !== undefined && (value < lo || value > hi)
+  const vx = value !== undefined ? x(value) : 0
+  const anchor = (px: number): 'start' | 'middle' | 'end' => px < 70 ? 'start' : px > W - 70 ? 'end' : 'middle'
+  const tk = ticks(lo, hi)
+
   return (
     <div ref={ref} className="w-full">
-    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} className="block" role="img" aria-label={`${a.name} scale`}>
-      <defs>
-        <pattern id={`hatch-${a.id}`} width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-          <line x1="0" y1="0" x2="0" y2="6" stroke="#E05A8A" strokeWidth="1.5" opacity="0.55" />
-        </pattern>
-      </defs>
-      <line x1={L} x2={W - R} y1={y} y2={y} stroke="#EBD5DC" strokeWidth="1" />
-      {lab && <rect x={x(lo_(lab))} y={y - 10} width={Math.max(1, x(hi_(lab)) - x(lo_(lab)))} height={20} fill="#EBD5DC" />}
-      {band && <rect x={x(lo_(band))} y={y - 10} width={Math.max(1, x(hi_(band)) - x(lo_(band)))} height={20} fill={`url(#hatch-${a.id})`} />}
-      {band && <text x={(x(lo_(band)) + x(hi_(band))) / 2} y={y - 30} fontSize="11" fill="#8B1E4B" textAnchor={anchor((x(lo_(band)) + x(hi_(band))) / 2, 'middle')}>contested {rangeText(band)}</text>}
-      {f !== null && <g>
-        <line x1={f} x2={f} y1={y - 14} y2={y + 14} stroke="#E05A8A" strokeWidth="2" />
-        <text x={close && m !== null && f < m ? f - 4 : close ? f + 4 : f} y={y - 17} fontSize="10" fill="#E05A8A" textAnchor={anchor(f, close && m !== null ? (f < m ? 'end' : 'start') : 'middle')}>women {fmt(sx.female!)}</text>
-      </g>}
-      {m !== null && <g>
-        <line x1={m} x2={m} y1={y - 14} y2={y + 14} stroke="#8A7A2A" strokeWidth="2" />
-        <text x={close && f !== null && m < f ? m - 4 : close ? m + 4 : m} y={y - 17} fontSize="10" fill="#8A7A2A" textAnchor={anchor(m, close && f !== null ? (m < f ? 'end' : 'start') : 'middle')}>men {fmt(sx.male!)}</text>
-      </g>}
-      {lab && lab[0] !== null && <text x={x(lab[0])} y={y + 26} fontSize="11" fill="#5E4F58" textAnchor="middle">{fmt(lab[0])}</text>}
-      {lab && lab[1] !== null && <text x={x(lab[1])} y={y + 26} fontSize="11" fill="#5E4F58" textAnchor="middle">{fmt(lab[1])}</text>}
-      {lab && <text x={(x(lo_(lab)) + x(hi_(lab))) / 2} y={y + 40} fontSize="11" fill="#8C7A84" textAnchor="middle">laboratory range, {sex === 'female' ? 'women' : 'men'}</text>}
-      {!(lab && lab[0] !== null && near(x(lab[0]), L)) && <text x={L} y={y + 26} fontSize="10" fill="#8C7A84" textAnchor="start">{fmt(lo)}</text>}
-      {!(lab && lab[1] !== null && near(x(lab[1]), W - R)) && <text x={W - R} y={y + 26} fontSize="10" fill="#8C7A84" textAnchor="end">{fmt(hi)}</text>}
-      {value !== undefined && <g>
-        <line x1={x(value)} x2={x(value)} y1={y - 12} y2={y + 12} stroke="#8B1E4B" strokeWidth="2" />
-        <polygon points={`${x(value) - 6},${y + 50} ${x(value) + 6},${y + 50} ${x(value)},${y + 43}`} fill="#8B1E4B" />
-        <text x={x(value)} y={y + 63} fontSize="12" fontWeight="700" fill="#8B1E4B" textAnchor={anchor(x(value), 'middle')}>{clipped ? (value < lo ? 'below the scale, ' : 'above the scale, ') : ''}{fmt(value)} {a.canonicalUnit}</text>
-      </g>}
-    </svg>
+      <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} className="block" role="img" aria-label={`${a.name}: laboratory reference interval, disputed interval and sex-specific thresholds${value !== undefined ? `, with the value ${fmt(value)} ${a.canonicalUnit}` : ''}`}>
+        <defs>
+          <pattern id={`hatch-${a.id}`} width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="5" stroke={ACCENT} strokeWidth="1.4" />
+          </pattern>
+        </defs>
+        {rows.map(r => <rect key={r.key} x={L} y={r.top + 17} width={W - L - R} height={12} fill="#F4F2EF" />)}
+        {lab && <rect x={x(lo_(lab))} y={top('lab') + 17} width={Math.max(2, x(hi_(lab)) - x(lo_(lab)))} height={12} fill="#9A9390" />}
+        {band && <>
+          <rect x={x(lo_(band))} y={top('band') + 17} width={Math.max(2, x(hi_(band)) - x(lo_(band)))} height={12} fill="#fff" />
+          <rect x={x(lo_(band))} y={top('band') + 17} width={Math.max(2, x(hi_(band)) - x(lo_(band)))} height={12} fill={`url(#hatch-${a.id})`} stroke={ACCENT} strokeWidth="1" />
+        </>}
+        {f !== null && <rect x={x(f) - 1.5} y={top('thr') + 14} width={3} height={18} fill={FEMALE} />}
+        {m !== null && <rect x={x(m) - 1.5} y={top('thr') + 14} width={3} height={18} fill={MALE} />}
+        {/* legend swatches inside the threshold label are not needed: women is drawn in rose, men in bronze, named in the caption */}
+        <line x1={L} x2={W - R} y1={axisY} y2={axisY} stroke={INK} strokeWidth="1" />
+        {tk.map((t, i) => (
+          <g key={t}>
+            <line x1={x(t)} x2={x(t)} y1={axisY} y2={axisY + 5} stroke={INK} strokeWidth="1" />
+            <text x={x(t)} y={axisY + 18} fontSize="11.5" fill={INK2} textAnchor={i === 0 && x(t) < 14 ? 'start' : x(t) > W - 14 ? 'end' : 'middle'}>{fmt(t)}</text>
+          </g>
+        ))}
+        <text x={W - R} y={axisY + 31} fontSize="11.5" fill={INK3} textAnchor="end">{a.canonicalUnit}</text>
+        {value !== undefined && <line x1={vx} x2={vx} y1={20} y2={axisY} stroke={ACCENT} strokeWidth="2" />}
+        {rows.map(r => <text key={r.key} x={L} y={r.top + 10} fontSize="12" fill={INK2} stroke="#fff" strokeWidth="5" strokeLinejoin="round" paintOrder="stroke">{r.label}</text>)}
+        {value !== undefined && <g>
+          <text x={vx} y={13} fontSize="13" fontWeight="600" fill={ACCENT} textAnchor={anchor(vx)}>{fmt(value)} {a.canonicalUnit}{off ? (value > hi ? ' (beyond the axis)' : ' (below the axis)') : ''}</text>
+        </g>}
+        {(f !== null || m !== null) && <text x={L} y={axisY + 31} fontSize="11.5" fill={INK3}>
+          {f !== null && <><tspan fill={FEMALE}>▮</tspan> women{m !== null ? '  ' : ''}</>}{m !== null && <><tspan fill={MALE}> ▮</tspan> men</>}
+        </text>}
+      </svg>
     </div>
   )
 }
